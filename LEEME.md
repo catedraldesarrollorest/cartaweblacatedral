@@ -61,18 +61,20 @@ Después de fijar la dirección definitiva, hay que actualizarla en dos sitios:
 
 ### Cambio de precios del día a día
 
-1. Abrir la dirección `/editor` en el navegador
-2. Cambiar lo que haga falta
-3. **Descargar carta.json**
-4. En GitHub: entrar en el archivo `carta.json` → icono del lápiz →
-   borrar todo → pegar el contenido nuevo → **Commit changes**
+1. Abrir `/editor`
+2. Cambiar lo que haga falta — en cuanto tocas algo aparece abajo una barra
+   roja que avisa de los cambios pendientes
+3. Pulsar **Guardar cambios**. Se descarga `carta.json` y salen en pantalla
+   los tres pasos siguientes
+4. En GitHub: abrir `carta.json` → lápiz → borrar todo → pegar el contenido
+   nuevo → **Commit changes**
 
-Vercel republica solo en unos segundos. La web queda actualizada.
+Vercel republica solo en unos segundos.
 
-> Si se trabaja por terminal:
-> ```bash
-> git add carta.json && git commit -m "Precios actualizados" && git push
-> ```
+> Si cierras el navegador sin guardar, el editor conserva el borrador y te
+> pregunta si quieres recuperarlo la próxima vez.
+
+> **Descartar** vuelve a la última carta publicada, sin los cambios.
 
 ### Platos nuevos, rediseño, PDF para las fundas
 
@@ -165,3 +167,14 @@ un archivo a su ordenador. El cambio real sólo ocurre al subirlo a GitHub.
 - `carta.json` se sirve sin cache, las imágenes con cache de un año
 - Datos estructurados Schema.org para búsquedas locales de Google
 - Responsive, foco visible por teclado, respeta `prefers-reduced-motion`
+
+---
+
+## Sobre el cache de imágenes
+
+Si cambias una foto **y mantienes el mismo nombre de archivo**, puede tardar
+hasta un día en verse: los navegadores guardan las imágenes para no
+descargarlas cada vez.
+
+Para que el cambio se vea al momento, **súbela con otro nombre**
+(`terraza-2.webp`) y actualiza el nombre en el editor. Es la forma segura.

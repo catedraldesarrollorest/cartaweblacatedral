@@ -880,7 +880,7 @@
   "slogan": "…para rendir culto a la buena mesa…",
   "descripcion": "En pleno Vedado, La Catedral es un salón y una terraza donde la mesa se toma en serio. Cocina cubana de siempre, brasas, mariscos frescos y una barra que trabaja con fruta natural y hielo de verdad.",
   "direccion": "Calle 8 e/ Calzada y 5ta, Vedado, La Habana",
-  "telefono": "",
+  "telefono": "78300000",
   "whatsapp": "",
   "instagram": "",
   "mapa": "https://maps.google.com/?q=Calle+8+entre+Calzada+y+5ta,+Vedado,+La+Habana",
@@ -906,19 +906,19 @@
    "Los precios están expresados en CUP e incluyen impuestos.",
    "Consulte con su camarero por alérgenos y disponibilidad del día."
   ],
-  "portada": "cate1",
+  "portada": "portada.webp",
   "galeria": [
    {
-    "img": "cate1",
-    "alt": "Salón"
+    "img": "terraza.webp",
+    "alt": "Terraza de La Catedral al atardecer"
    },
    {
-    "img": "",
-    "alt": "Terraza"
+    "img": "barra.webp",
+    "alt": "Cocteles de la casa"
    },
    {
-    "img": "",
-    "alt": "Cocina"
+    "img": "mesa.webp",
+    "alt": "Picadera de chorizos con pan tostado"
    }
   ]
  },
