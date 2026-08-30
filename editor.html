@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Editor de la carta · La Catedral</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="logo.png">
+<style>
+:root{
+  --piedra:#EAE9E6; --piedra-clara:#F5F4F2; --blanco:#fff;
+  --tinta:#16140F; --tinta-suave:#6B6862;
+  --rubro:#A3212B; --linea:#D2D0CB; --verde:#1E7A44;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',Times,serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--piedra);color:var(--tinta);font-family:var(--sans);
+  font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}}
+
+.rubro{font-size:10.5px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--rubro)}
+
+/* ── Barra ── */
+header{position:sticky;top:0;z-index:60;background:var(--tinta);color:var(--piedra)}
+.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  max-width:1100px;margin:0 auto;padding:11px 18px}
+.bar h1{font-family:var(--serif);font-size:15px;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.bar h1::before{content:"";width:9px;height:9px;background:var(--rubro);
+  clip-path:polygon(38% 0,62% 0,62% 38%,100% 38%,100% 62%,62% 62%,62% 100%,38% 100%,38% 62%,0 62%,0 38%,38% 38%)}
+.bar .sep{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+
+button{font-family:var(--sans);font-size:13px;cursor:pointer;
+  border:1px solid var(--tinta);background:var(--blanco);color:var(--tinta);
+  padding:9px 14px;min-height:40px;transition:background .16s,color .16s,border-color .16s}
+button:hover{background:var(--tinta);color:var(--blanco)}
+button.pri{background:var(--rubro);border-color:var(--rubro);color:#fff}
+button.pri:hover{background:#8A1B23;border-color:#8A1B23}
+button.ghost{background:transparent;border-color:#5A5751;color:var(--piedra)}
+button.ghost:hover{background:var(--piedra);color:var(--tinta);border-color:var(--piedra)}
+button.mini{padding:5px 9px;min-height:32px;font-size:12px}
+button.peligro{border-color:var(--rubro);color:var(--rubro);background:transparent}
+button.peligro:hover{background:var(--rubro);color:#fff}
+
+main{max-width:1100px;margin:0 auto;padding:22px 18px 90px}
+
+/* ── Avisos ── */
+#aviso{position:fixed;left:50%;bottom:22px;transform:translate(-50%,90px);
+  background:var(--tinta);color:var(--piedra);padding:12px 20px;
+  font-size:13px;z-index:90;opacity:0;pointer-events:none;
+  transition:transform .28s cubic-bezier(.22,1,.36,1),opacity .28s}
+#aviso.on{transform:translate(-50%,0);opacity:1}
+
+/* ── Paneles ── */
+.panel{background:var(--blanco);border:1px solid var(--linea);margin-bottom:16px}
+.panel>summary{list-style:none;cursor:pointer;padding:14px 18px;
+  display:flex;align-items:center;gap:11px;font-weight:600;font-size:14px;
+  border-bottom:1px solid transparent}
+.panel>summary::-webkit-details-marker{display:none}
+.panel[open]>summary{border-bottom-color:var(--linea)}
+.panel>summary::before{content:"▸";color:var(--rubro);font-size:11px;
+  transition:transform .18s ease;display:inline-block}
+.panel[open]>summary::before{transform:rotate(90deg)}
+.panel>summary .cuenta{margin-left:auto;font-weight:400;font-size:12px;color:var(--tinta-suave)}
+.cuerpo{padding:16px 18px}
+
+/* ── Campos ── */
+label{display:block}
+label .rubro{display:block;margin-bottom:5px}
+input,textarea,select{width:100%;font-family:var(--sans);font-size:14px;
+  padding:9px 11px;border:1px solid var(--linea);background:var(--blanco);
+  color:var(--tinta);min-height:40px}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--rubro);outline-offset:-1px;border-color:var(--rubro)}
+textarea{min-height:66px;resize:vertical;line-height:1.45}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+
+/* ── Items de la carta ── */
+.sub{margin-top:20px}
+.sub-cab{display:flex;align-items:center;gap:9px;
+  background:var(--tinta);color:var(--piedra-clara);padding:7px 12px}
+.sub-cab input{background:transparent;border:0;color:inherit;
+  font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  font-size:11.5px;padding:3px 0;min-height:auto}
+.sub-cab input:focus{outline:1px solid var(--piedra)}
+.sub-cab .acc{margin-left:auto;display:flex;gap:6px;flex:none}
+.sub-cab button{background:transparent;border-color:#6B6862;color:var(--piedra-clara);
+  padding:4px 9px;min-height:30px;font-size:11.5px}
+.sub-cab button:hover{background:var(--piedra-clara);color:var(--tinta)}
+
+.fila{display:grid;grid-template-columns:1fr 116px auto;gap:8px;
+  align-items:start;padding:9px 0;border-bottom:1px solid var(--linea)}
+.fila .campos{display:grid;gap:6px}
+.fila input.nom{font-family:var(--serif);font-size:15.5px}
+.fila input.des{font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--tinta-suave)}
+.fila input.pre{font-family:var(--serif);font-weight:700;text-align:right;
+  font-variant-numeric:tabular-nums}
+.fila .quitar{align-self:start}
+
+/* ── Ajuste de precios ── */
+.ajuste{background:var(--piedra-clara);border:1px solid var(--linea);
+  padding:14px 16px;margin-bottom:18px;
+  display:flex;flex-wrap:wrap;gap:11px;align-items:flex-end}
+.ajuste label{flex:1;min-width:130px}
+.ajuste .nota{flex-basis:100%;font-size:12.5px;color:var(--tinta-suave);margin:0}
+
+.vacio{padding:40px 18px;text-align:center;color:var(--tinta-suave);font-style:italic;
+  font-family:var(--serif)}
+.pista{font-size:12.5px;color:var(--tinta-suave);margin-top:6px}
+:focus-visible{outline:2px solid var(--rubro);outline-offset:2px}
+
+/* ── Vista de impresión ── */
+#imprimible{display:none}
+@media print{
+  header,main,#aviso{display:none!important}
+  #imprimible{display:block;font-family:var(--serif);color:#000}
+  body{background:#fff}
+  .p-hoja{page-break-after:always;padding:14mm 12mm}
+  .p-hoja:last-child{page-break-after:auto}
+  .p-tit{text-align:center;font-size:20pt;font-weight:700;margin-bottom:3mm}
+  .p-orn{border-top:1.4pt solid #000;border-bottom:.4pt solid #000;
+    height:2.4pt;width:46%;margin:0 auto 6mm}
+  .p-banda{background:#000!important;color:#fff!important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+    font-size:8.5pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    text-align:center;padding:1.6mm;margin:4mm 0 1mm}
+  .p-item{display:flex;justify-content:space-between;gap:6mm;
+    border-bottom:.3pt solid #bbb;padding:1.1mm 0;font-size:10.5pt}
+  .p-item b{font-weight:700;font-variant-numeric:tabular-nums}
+  .p-des{font-style:italic;font-size:8.5pt;color:#555;padding-bottom:1mm;
+    border-bottom:.3pt solid #bbb}
+  .p-pie{text-align:center;font-style:italic;font-size:8.5pt;color:#666;
+    margin-top:5mm;padding-top:2mm;border-top:.3pt solid #bbb}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <h1>Editor de la carta</h1>
+    <div class="sep">
+      <button class="ghost" id="btn-abrir">Abrir archivo</button>
+      <button class="ghost" id="btn-imprimir">Imprimir / PDF</button>
+      <button class="pri" id="btn-guardar">Descargar carta.json</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="app"><p class="vacio">Cargando la carta…</p></div>
+</main>
+
+<div id="aviso" role="status" aria-live="polite"></div>
+<input type="file" id="file" accept=".json,application/json" hidden>
+<div id="imprimible"></div>
+
+<script>
+(function(){
+"use strict";
+
+var D = null;                                  // datos en memoria
+var $ = function(s,c){ return (c||document).querySelector(s); };
+
+function esc(s){
+  return String(s == null ? "" : s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+function num(n){ return Number(n).toLocaleString("es-ES"); }
+
+var avisoT;
+function aviso(txt){
+  var a = $("#aviso");
+  a.textContent = txt; a.classList.add("on");
+  clearTimeout(avisoT);
+  avisoT = setTimeout(function(){ a.classList.remove("on"); }, 2200);
+}
+
+/* ═══ PINTAR EDITOR ═══ */
+function pintar(){
+  var L = D.local || (D.local = {});
+  var h = "";
+
+  /* — Identidad — */
+  h += '<details class="panel" data-k="local"><summary>Identidad del local' +
+       '<span class="cuenta">nombre, dirección, horario</span></summary><div class="cuerpo">' +
+       '<div class="rejilla">' +
+         campo("Slogan","local.slogan",L.slogan) +
+         campo("Dirección","local.direccion",L.direccion) +
+         campo("Teléfono","local.telefono",L.telefono,"tel") +
+         campo("WhatsApp","local.whatsapp",L.whatsapp) +
+         campo("Instagram","local.instagram",L.instagram) +
+         campo("Enlace del mapa","local.mapa",L.mapa) +
+       '</div>' +
+       '<label style="margin-top:14px"><span class="rubro">Descripción</span>' +
+         '<textarea data-p="local.descripcion">' + esc(L.descripcion) + '</textarea></label>' +
+       '<div style="margin-top:16px"><span class="rubro">Horario</span>' +
+         (L.horario || []).map(function(x,i){
+           return '<div class="rejilla" style="margin-top:8px">' +
+             campo("Días","local.horario."+i+".dias",x.dias) +
+             campo("Abre","local.horario."+i+".abre",x.abre) +
+             campo("Cierra","local.horario."+i+".cierra",x.cierra) + '</div>';
+         }).join("") +
+       '</div></div></details>';
+
+  /* — Ajuste global — */
+  h += '<div class="ajuste">' +
+         '<label><span class="rubro">Ajustar precios de</span>' +
+           '<select id="aj-sec"><option value="*">Toda la carta</option>' +
+             (D.secciones||[]).map(function(s,i){
+               return '<option value="'+i+'">'+esc(s.titulo_tematico)+'</option>';
+             }).join("") + '</select></label>' +
+         '<label><span class="rubro">Porcentaje</span>' +
+           '<input type="number" id="aj-pct" value="5" step="0.5"></label>' +
+         '<label><span class="rubro">Redondear a</span>' +
+           '<select id="aj-red">' +
+             '<option value="1">Sin redondear</option>' +
+             '<option value="10">Decena</option>' +
+             '<option value="50" selected>50</option>' +
+             '<option value="100">100</option></select></label>' +
+         '<button class="pri" id="aj-ir">Aplicar</button>' +
+         '<p class="nota">Sube o baja los precios en bloque. Usa un número negativo para bajar.</p>' +
+       '</div>';
+
+  /* — Secciones — */
+  (D.secciones || []).forEach(function(sec, si){
+    var n = (sec.subsecciones||[]).reduce(function(a,s){ return a + (s.items||[]).length; },0);
+    h += '<details class="panel"><summary>' + esc(sec.titulo_tematico) +
+         '<span class="cuenta">' + n + ' productos</span></summary><div class="cuerpo">' +
+         '<div class="rejilla">' +
+           campo("Título de la sección","secciones."+si+".titulo_tematico",sec.titulo_tematico) +
+           campo("Frase al pie","secciones."+si+".pie",sec.pie) +
+         '</div>';
+
+    (sec.subsecciones || []).forEach(function(sub, ui){
+      h += '<div class="sub"><div class="sub-cab">' +
+             '<input value="'+esc(sub.nombre)+'" data-p="secciones.'+si+'.subsecciones.'+ui+'.nombre" aria-label="Nombre del grupo">' +
+             '<span class="acc">' +
+               '<button data-add="'+si+'.'+ui+'">+ Producto</button>' +
+               '<button data-delsub="'+si+'.'+ui+'">Eliminar grupo</button>' +
+             '</span></div>';
+
+      (sub.items || []).forEach(function(it, ii){
+        var base = "secciones."+si+".subsecciones."+ui+".items."+ii;
+        h += '<div class="fila">' +
+               '<div class="campos">' +
+                 '<input class="nom" value="'+esc(it.nombre)+'" data-p="'+base+'.nombre" aria-label="Nombre del producto">' +
+                 '<input class="des" value="'+esc(it.descripcion)+'" data-p="'+base+'.descripcion" placeholder="Descripción (opcional)" aria-label="Descripción">' +
+               '</div>' +
+               '<input class="pre" type="number" value="'+(it.precio==null?"":it.precio)+'" data-p="'+base+'.precio" placeholder="—" aria-label="Precio">' +
+               '<button class="mini peligro quitar" data-del="'+si+'.'+ui+'.'+ii+'" aria-label="Quitar">✕</button>' +
+             '</div>';
+      });
+      h += '</div>';
+    });
+
+    h += '<div style="margin-top:18px"><button data-addsub="'+si+'">+ Añadir grupo</button>' +
+         '<p class="pista">Un grupo es una banda negra en la carta, por ejemplo «Cervezas».</p></div>' +
+         '</div></details>';
+  });
+
+  $("#app").innerHTML = h;
+  enlazar();
+}
+
+function campo(lbl, ruta, val, tipo){
+  return '<label><span class="rubro">'+esc(lbl)+'</span>' +
+         '<input type="'+(tipo||"text")+'" value="'+esc(val)+'" data-p="'+ruta+'"></label>';
+}
+
+/* ═══ LEER / ESCRIBIR POR RUTA ═══ */
+function fijar(ruta, val){
+  var p = ruta.split("."), o = D;
+  for(var i=0;i<p.length-1;i++) o = o[p[i]];
+  var k = p[p.length-1];
+  if(k === "precio") o[k] = (val === "" ? null : Number(val));
+  else o[k] = val;
+}
+
+function enlazar(){
+  $("#app").addEventListener("input", function(ev){
+    var el = ev.target;
+    if(el.dataset.p) fijar(el.dataset.p, el.value);
+  });
+
+  $("#app").addEventListener("click", function(ev){
+    var b = ev.target.closest("button"); if(!b) return;
+
+    if(b.dataset.add){
+      var a = b.dataset.add.split(".");
+      D.secciones[a[0]].subsecciones[a[1]].items.push({nombre:"Producto nuevo",descripcion:"",precio:0});
+      pintar(); aviso("Producto añadido");
+    }
+    if(b.dataset.del){
+      var d = b.dataset.del.split(".");
+      D.secciones[d[0]].subsecciones[d[1]].items.splice(d[2],1);
+      pintar(); aviso("Producto eliminado");
+    }
+    if(b.dataset.addsub){
+      D.secciones[b.dataset.addsub].subsecciones.push({nombre:"Grupo nuevo",items:[]});
+      pintar(); aviso("Grupo añadido");
+    }
+    if(b.dataset.delsub){
+      var s = b.dataset.delsub.split(".");
+      var nom = D.secciones[s[0]].subsecciones[s[1]].nombre;
+      if(confirm('¿Eliminar el grupo "'+nom+'" y todos sus productos?')){
+        D.secciones[s[0]].subsecciones.splice(s[1],1);
+        pintar(); aviso("Grupo eliminado");
+      }
+    }
+    if(b.id === "aj-ir") ajustar();
+  });
+}
+
+/* ═══ AJUSTE DE PRECIOS ═══ */
+function ajustar(){
+  var sel = $("#aj-sec").value;
+  var pct = parseFloat($("#aj-pct").value);
+  var red = parseInt($("#aj-red").value,10) || 1;
+  if(isNaN(pct) || pct === 0){ aviso("Escribe un porcentaje"); return; }
+
+  var secs = sel === "*" ? D.secciones : [D.secciones[+sel]];
+  var n = 0;
+  secs.forEach(function(s){
+    (s.subsecciones||[]).forEach(function(u){
+      (u.items||[]).forEach(function(it){
+        if(it.precio == null) return;
+        it.precio = Math.round(it.precio * (1 + pct/100) / red) * red;
+        n++;
+      });
+    });
+  });
+  pintar();
+  aviso(n + " precios ajustados " + (pct>0?"+":"") + pct + "%");
+}
+
+/* ═══ GUARDAR ═══ */
+function guardar(){
+  D.actualizado = new Date().toISOString().slice(0,10);
+  var blob = new Blob([JSON.stringify(D,null,1)], {type:"application/json"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "carta.json";
+  a.click();
+  URL.revokeObjectURL(a.href);
+  aviso("carta.json descargado");
+}
+
+/* ═══ VISTA DE IMPRESIÓN ═══ */
+function prepararImpresion(){
+  var h = "";
+  (D.secciones || []).forEach(function(sec){
+    h += '<div class="p-hoja"><div class="p-tit">'+esc(sec.titulo_tematico)+'</div><div class="p-orn"></div>';
+    var yaC = false;
+    (sec.subsecciones||[]).forEach(function(sub){
+      if(sub.grupo === "cocteles" && !yaC){ h += '<div class="p-banda">Cocteles</div>'; yaC = true; }
+      h += '<div class="p-banda">'+esc(sub.nombre)+'</div>';
+      (sub.items||[]).forEach(function(it){
+        h += '<div class="p-item"><span>'+esc(it.nombre)+'</span><b>' +
+             (it.precio==null ? "consultar" : num(it.precio)) + '</b></div>';
+        if(it.descripcion) h += '<div class="p-des">('+esc(it.descripcion)+')</div>';
+      });
+    });
+    if(sec.pie) h += '<div class="p-pie">'+esc(sec.pie)+'</div>';
+    h += '</div>';
+  });
+  $("#imprimible").innerHTML = h;
+}
+
+/* ═══ CARGA ═══ */
+function cargar(d){
+  D = d;
+  if(!D.secciones){ $("#app").innerHTML = '<p class="vacio">Ese archivo no tiene el formato de la carta.</p>'; return; }
+  pintar();
+}
+
+$("#btn-guardar").onclick  = guardar;
+$("#btn-abrir").onclick    = function(){ $("#file").click(); };
+$("#btn-imprimir").onclick = function(){ prepararImpresion(); setTimeout(function(){ print(); }, 60); };
+
+$("#file").onchange = function(e){
+  var f = e.target.files[0]; if(!f) return;
+  var r = new FileReader();
+  r.onload = function(){
+    try{ cargar(JSON.parse(r.result)); aviso("Carta cargada"); }
+    catch(err){ aviso("El archivo no es un JSON válido"); }
+  };
+  r.readAsText(f);
+};
+
+addEventListener("keydown", function(e){
+  if((e.metaKey||e.ctrlKey) && e.key === "s"){ e.preventDefault(); guardar(); }
+});
+addEventListener("beforeunload", function(e){
+  if(D){ e.preventDefault(); e.returnValue = ""; }
+});
+
+fetch("carta.json", {cache:"no-cache"})
+  .then(function(r){ return r.json(); })
+  .then(cargar)
+  .catch(function(){
+    $("#app").innerHTML = '<p class="vacio">No se encontró carta.json. Usa «Abrir archivo» para cargarla.</p>';
+  });
+
+})();
+</script>
+</body>
+</html>
