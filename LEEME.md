@@ -102,24 +102,42 @@ respeta el formato exacto de 6 caras.
 
 ## Fotos
 
-En `index.html`, sección «El lugar», hay tres huecos:
+Las fotos se manejan en dos pasos: **subir el archivo** a GitHub y **decir su
+nombre** en el editor.
 
-```html
-<div class="foto vacia" data-lbl="Salón"></div>
-```
+### 1. Subir la foto
 
-Se sustituyen por:
+En GitHub, en la carpeta raíz del repositorio (donde está `logo.png`):
+**Add file → Upload files** y arrastrar las fotos.
 
-```html
-<div class="foto"><img src="salon.jpg" alt="Salón de La Catedral" loading="lazy"></div>
-```
+**Antes de subirlas**, redúcelas: máximo **1200 px de ancho** y por debajo de
+**200 KB** cada una. Se puede hacer gratis en squoosh.app. Una foto de móvil
+sin comprimir pesa 4 MB y tumba la carga en conexiones lentas.
 
-Las fotos van en la raíz del repositorio, junto a `logo.png`.
+### 2. Decir su nombre en el editor
 
-**Importante para conexiones lentas:** máximo 1200 px de ancho y por debajo de
-200 KB cada una. Se pueden comprimir en squoosh.app antes de subirlas.
+Abrir `/editor` → panel **Imágenes**:
 
----
+| Campo | Para qué sirve |
+|---|---|
+| Foto de portada | Fondo del encabezado, detrás del logo |
+| Galería · Archivo | Las tres fotos de «El lugar» |
+| Galería · Texto alternativo | Lo que se lee si la foto no carga |
+
+Se escribe sólo el nombre del archivo: `salon.jpg`, no la ruta completa.
+Descargar `carta.json` y subirlo, como cualquier otro cambio.
+
+Un campo en blanco deja el hueco vacío sin romper nada.
+
+### Sobre la foto de portada
+
+La web la pasa a monocromo sobre el color piedra y la funde por arriba y por
+abajo. Así el logo siempre se lee y cualquier foto entra en la paleta de la
+marca, aunque tenga colores que choquen.
+
+Funciona mejor una foto **horizontal y con profundidad**: el salón entero, la
+terraza a lo largo, la barra en perspectiva. Un primer plano de un plato queda
+raro de fondo.
 
 ## Datos del local
 

@@ -905,6 +905,21 @@
   "notas": [
    "Los precios están expresados en CUP e incluyen impuestos.",
    "Consulte con su camarero por alérgenos y disponibilidad del día."
+  ],
+  "portada": "",
+  "galeria": [
+   {
+    "img": "",
+    "alt": "Salón"
+   },
+   {
+    "img": "",
+    "alt": "Terraza"
+   },
+   {
+    "img": "",
+    "alt": "Cocina"
+   }
   ]
  },
  "actualizado": "2026-08-30"

@@ -13,9 +13,6 @@
 <style>
 /* ─────────────────────────────────────────────
    LA CATEDRAL — piedra, tinta y rúbrica
-   Piedra de catedral como fondo, tinta cálida,
-   y un rojo litúrgico usado sólo para rubricar,
-   como en un misal. Sin webfonts: carga instantánea.
    ───────────────────────────────────────────── */
 :root{
   --piedra:#EAE9E6;
@@ -36,42 +33,25 @@ html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 
-body{
-  background:var(--piedra);
-  color:var(--tinta);
-  font-family:var(--serif);
-  font-size:17px;
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-  overflow-x:hidden;
-}
+body{background:var(--piedra);color:var(--tinta);
+  font-family:var(--serif);font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
 
-/* ── Rúbrica: etiqueta roja en versalitas, como en un misal ── */
-.rubro{
-  font-family:var(--sans);
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--rubro);
-}
+.rubro{font-family:var(--sans);font-size:11px;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--rubro)}
 
-/* ── Ornamento de doble regla, heredado de la carta impresa ── */
 .orn{display:block;width:100%;max-width:280px;margin:0 auto}
 .orn i{display:block;background:var(--tinta)}
 .orn i:first-child{height:2px}
 .orn i:last-child{height:1px;margin-top:3px;opacity:.55}
 
-/* ═══ BARRA SUPERIOR ═══ */
-header{
-  position:sticky;top:0;z-index:50;
+/* ═══ BARRA ═══ */
+header{position:sticky;top:0;z-index:50;
   background:rgba(234,233,230,.94);
   backdrop-filter:saturate(150%) blur(10px);
   -webkit-backdrop-filter:saturate(150%) blur(10px);
-  border-bottom:1px solid var(--linea);
-}
+  border-bottom:1px solid var(--linea)}
 .bar{display:flex;align-items:center;gap:14px;height:52px;
   max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
 .mark{font-family:var(--serif);font-weight:700;font-size:15px;
@@ -89,8 +69,31 @@ nav a:hover,nav a:focus-visible{color:var(--tinta);background:rgba(0,0,0,.05)}
 nav a[aria-current="true"]{color:var(--rubro)}
 
 /* ═══ PORTADA ═══ */
-.hero{padding:clamp(38px,9vw,76px) 0 clamp(30px,7vw,54px);text-align:center}
-.hero img{width:min(74vw,282px);height:auto;display:block;margin:0 auto clamp(20px,5vw,30px)}
+.hero{position:relative;isolation:isolate;text-align:center;
+  padding:clamp(38px,9vw,76px) 0 clamp(30px,7vw,54px)}
+
+/* Fondo fotográfico: monocromo sobre piedra, así cualquier foto entra en paleta */
+.hero-foto{position:absolute;inset:0;z-index:-1;overflow:hidden;
+  background:var(--piedra)}
+.hero-foto img{width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(1) contrast(1.06) brightness(1.04);
+  mix-blend-mode:multiply;opacity:.5;
+  transform:scale(1.06);
+  animation:asentar 1.6s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes asentar{to{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.hero-foto img{animation:none;transform:none}}
+/* La piedra se cierra arriba y abajo para que el logo y la barra respiren */
+.hero-foto::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,
+    var(--piedra) 0%,
+    rgba(234,233,230,.55) 26%,
+    rgba(234,233,230,.55) 62%,
+    var(--piedra) 100%)}
+
+.hero img.logo{width:min(74vw,282px);height:auto;display:block;
+  margin:0 auto clamp(20px,5vw,30px);position:relative}
+.hero.con-foto{padding-top:clamp(54px,12vw,96px);padding-bottom:clamp(44px,10vw,74px)}
+
 .hero .slogan{font-style:italic;font-size:clamp(16px,4.2vw,20px);
   color:var(--tinta-suave);margin:18px 0}
 .estado{display:inline-flex;align-items:center;gap:8px;margin-top:6px;
@@ -119,19 +122,17 @@ section{padding:clamp(34px,8vw,62px) 0}
   letter-spacing:-.01em;line-height:1.12;margin:9px 0 12px}
 
 /* ═══ CARTA ═══ */
-/* Banda negra: el gesto de la carta impresa, traído tal cual */
 .banda{background:var(--tinta);color:var(--piedra-clara);
   font-family:var(--sans);font-size:12px;font-weight:600;
   letter-spacing:.15em;text-transform:uppercase;text-align:center;
   padding:8px 12px;margin:34px 0 4px}
 .banda.sub{background:#5A5751;font-size:11px;letter-spacing:.13em;
   padding:6px 12px;margin-top:16px}
-.grupo:first-of-type .banda{margin-top:0}
+.grupo>.banda:first-child{margin-top:0}
 
-.item{display:grid;grid-template-columns:1fr auto;
-  gap:6px 16px;align-items:baseline;
-  padding:10px 0 9px;border-bottom:1px solid var(--linea)}
-.item h3{font-size:17px;font-weight:400;line-height:1.3;letter-spacing:0}
+.item{display:grid;grid-template-columns:1fr auto;gap:6px 16px;
+  align-items:baseline;padding:10px 0 9px;border-bottom:1px solid var(--linea)}
+.item h3{font-size:17px;font-weight:400;line-height:1.3}
 .item .precio{font-weight:700;font-variant-numeric:tabular-nums;
   white-space:nowrap;font-size:17px}
 .item .consultar{font-style:italic;font-weight:400;font-size:14px;color:var(--tinta-suave)}
@@ -140,10 +141,10 @@ section{padding:clamp(34px,8vw,62px) 0}
 
 .nota-carta{margin-top:30px;padding-top:20px;border-top:1px solid var(--linea);
   text-align:center;font-style:italic;font-size:14px;color:var(--tinta-suave)}
-.nota-carta span{display:block}
-.taza{width:118px;height:auto;display:block;margin:26px auto 0;opacity:.9}
+.taza{width:132px;height:auto;display:block;margin:30px auto 4px;
+  /* Tinta impresa sobre la piedra: sin fondo, sin recuadro */}
 
-/* Índice de secciones de la carta */
+/* ── Índice de secciones ── */
 .indice{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;
   margin-bottom:clamp(26px,6vw,40px)}
 .indice button{font-family:var(--sans);font-size:12px;letter-spacing:.07em;
@@ -155,18 +156,41 @@ section{padding:clamp(34px,8vw,62px) 0}
 .indice button[aria-pressed="true"]{background:var(--tinta);color:var(--piedra-clara);
   border-color:var(--tinta)}
 
+/* ── Pase de página: al final de cada sección ── */
+.pase{margin-top:40px;padding-top:26px;border-top:2px solid var(--tinta)}
+.pase-tit{text-align:center;display:block;margin-bottom:16px}
+.pase-par{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+@media (max-width:520px){.pase-par{grid-template-columns:1fr}}
+.pase-par button{font-family:var(--serif);text-align:left;cursor:pointer;
+  background:var(--piedra-clara);border:1px solid var(--linea);
+  padding:14px 16px;min-height:64px;color:var(--tinta);width:100%;
+  display:flex;flex-direction:column;justify-content:center;gap:3px;
+  transition:border-color .18s ease,background .18s ease,transform .18s ease}
+.pase-par button:hover{border-color:var(--tinta);background:var(--blanco,#fff)}
+.pase-par button:active{transform:translateY(1px)}
+.pase-par .dir{font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--rubro)}
+.pase-par .nom{font-size:16.5px;line-height:1.25}
+.pase-par .sig{text-align:right;align-items:flex-end}
+.pase-todas{display:block;margin:16px auto 0;background:transparent;border:0;
+  font-family:var(--sans);font-size:12px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--tinta-suave);cursor:pointer;padding:12px 16px;min-height:44px;
+  border-bottom:1px solid var(--linea);transition:color .18s ease,border-color .18s ease}
+.pase-todas:hover{color:var(--rubro);border-color:var(--rubro)}
+
 /* ═══ EL LUGAR ═══ */
 .galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));
   gap:10px;margin:30px 0}
 .foto{aspect-ratio:4/5;background:var(--piedra-clara);
   border:1px solid var(--linea);overflow:hidden;position:relative}
-.foto img{width:100%;height:100%;object-fit:cover;display:block}
+.foto img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.foto:hover img{transform:scale(1.03)}
 .foto.vacia::after{content:attr(data-lbl);position:absolute;inset:0;
   display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;
   font-family:var(--sans);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
   color:#A9A6A0}
-.prosa{font-size:17.5px;line-height:1.62;text-align:center;
-  max-width:56ch;margin:0 auto}
+.prosa{font-size:17.5px;line-height:1.62;text-align:center;max-width:56ch;margin:0 auto}
 
 /* ═══ DATOS ═══ */
 .datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
@@ -185,11 +209,9 @@ footer{border-top:1px solid var(--linea);padding:30px 0 40px;text-align:center}
 footer p{font-size:13.5px;color:var(--tinta-suave)}
 footer .orn{margin-bottom:20px}
 
-/* ═══ ESTADOS ═══ */
 .cargando{text-align:center;padding:60px 0;color:var(--tinta-suave);font-style:italic}
 .fallo{text-align:center;padding:40px 0;color:var(--rubro)}
 
-/* ═══ APARICIÓN AL ENTRAR EN PANTALLA ═══ */
 .rev{opacity:0;transform:translateY(12px)}
 .rev.on{opacity:1;transform:none;
   transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}
@@ -198,7 +220,7 @@ footer .orn{margin-bottom:20px}
 :focus-visible{outline:2px solid var(--rubro);outline-offset:3px}
 
 @media print{
-  header,.indice,.acciones,.galeria,footer,.estado{display:none!important}
+  header,.indice,.acciones,.galeria,footer,.estado,.pase,.hero-foto{display:none!important}
   body{background:#fff;font-size:11pt}
   .rev{opacity:1;transform:none}
   section{padding:0;page-break-inside:avoid}
@@ -246,20 +268,21 @@ footer .orn{margin-bottom:20px}
 
 <main>
 
-<!-- ═══ PORTADA ═══ -->
-<div class="hero wrap" id="inicio">
-  <img src="logo.png" alt="La Catedral, bar restaurante" width="282" height="274" fetchpriority="high">
-  <div class="orn"><i></i><i></i></div>
-  <p class="slogan" id="slogan">…para rendir culto a la buena mesa…</p>
-  <div class="orn"><i></i><i></i></div>
-  <div id="estado"></div>
-  <div class="acciones">
-    <a class="btn solid" href="#carta">Ver la carta</a>
-    <a class="btn" href="#visitanos">Cómo llegar</a>
+<div class="hero" id="inicio">
+  <div class="hero-foto" id="hero-foto" hidden></div>
+  <div class="wrap">
+    <img class="logo" src="logo.png" alt="La Catedral, bar restaurante" width="282" height="274" fetchpriority="high">
+    <div class="orn"><i></i><i></i></div>
+    <p class="slogan" id="slogan">…para rendir culto a la buena mesa…</p>
+    <div class="orn"><i></i><i></i></div>
+    <div id="estado"></div>
+    <div class="acciones">
+      <a class="btn solid" href="#carta">Ver la carta</a>
+      <a class="btn" href="#visitanos">Cómo llegar</a>
+    </div>
   </div>
 </div>
 
-<!-- ═══ CARTA ═══ -->
 <section id="carta">
   <div class="wrap">
     <div class="tit">
@@ -272,7 +295,6 @@ footer .orn{margin-bottom:20px}
   </div>
 </section>
 
-<!-- ═══ EL LUGAR ═══ -->
 <section id="lugar">
   <div class="wrap">
     <div class="tit">
@@ -280,15 +302,10 @@ footer .orn{margin-bottom:20px}
       <h2>Salón y terraza</h2>
     </div>
     <p class="prosa rev" id="descripcion"></p>
-    <div class="galeria rev">
-      <div class="foto vacia" data-lbl="Salón"></div>
-      <div class="foto vacia" data-lbl="Terraza"></div>
-      <div class="foto vacia" data-lbl="Cocina"></div>
-    </div>
+    <div class="galeria rev" id="galeria"></div>
   </div>
 </section>
 
-<!-- ═══ VISÍTANOS ═══ -->
 <section id="visitanos">
   <div class="wrap">
     <div class="tit">
@@ -313,28 +330,28 @@ footer .orn{margin-bottom:20px}
 (function(){
 "use strict";
 
-var CACHE = "catedral.carta.v1";
-var $  = function(s){ return document.querySelector(s); };
+var CACHE = "catedral.carta.v2";
+var $ = function(s){ return document.querySelector(s); };
 
-/* ── Formato de precio: separador de millares con coma, como en la carta ── */
-function precio(n){ return n.toLocaleString("es-ES"); }
+/* Precio con coma de millares: idéntico a la carta impresa */
+function precio(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
 
 function esc(s){
   return String(s == null ? "" : s)
-    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
 
-/* ── ¿Está abierto ahora? ── */
 function estadoAhora(horario){
   if(!horario || !horario.length) return null;
-  var d = new Date(), dow = d.getDay();           // 0=domingo
+  var d = new Date(), dow = d.getDay();
   var min = d.getHours()*60 + d.getMinutes();
-  var idx = dow===0 ? 2 : (dow>=5 ? 1 : 0);       // dom / vie-sáb / lun-jue
+  var idx = dow===0 ? 2 : (dow>=5 ? 1 : 0);
   var h = horario[Math.min(idx, horario.length-1)];
   if(!h) return null;
   function mins(t){ var p = String(t).split(":"); return (+p[0])*60 + (+p[1]||0); }
   var a = mins(h.abre), c = mins(h.cierra);
-  var abierto = c > a ? (min >= a && min < c) : (min >= a || min < c); // cruza medianoche
+  var abierto = c > a ? (min >= a && min < c) : (min >= a || min < c);
   return { abierto: abierto, cierra: h.cierra, abre: h.abre };
 }
 
@@ -349,14 +366,16 @@ function pintarEstado(local){
     '</p>';
 }
 
-/* ── Carta ── */
+/* ═══ CARTA ═══ */
+var SECS = [];
+
 function pintarMenu(data){
-  var secs = data.secciones || [];
+  SECS = data.secciones || [];
   var idx = "", html = "";
 
-  secs.forEach(function(sec, i){
+  SECS.forEach(function(sec, i){
     var id = "sec-" + (sec.id || i);
-    idx += '<button type="button" data-t="' + id + '" aria-pressed="' + (i===0) + '">' +
+    idx += '<button type="button" data-t="' + i + '" aria-pressed="' + (i===0) + '">' +
              esc(sec.titulo_tematico) + '</button>';
 
     html += '<div class="grupo rev" id="' + id + '" data-i="' + i + '"' +
@@ -364,12 +383,12 @@ function pintarMenu(data){
 
     var yaCoctel = false;
     (sec.subsecciones || []).forEach(function(sub){
-      var esCoctel = sub.grupo === "cocteles";
-      if(esCoctel && !yaCoctel){
+      if(sub.grupo === "cocteles" && !yaCoctel){
         html += '<div class="banda">Cocteles</div>';
         yaCoctel = true;
       }
-      html += '<div class="banda' + (esCoctel ? " sub" : "") + '">' + esc(sub.nombre) + '</div>';
+      html += '<div class="banda' + (sub.grupo === "cocteles" ? " sub" : "") + '">' +
+              esc(sub.nombre) + '</div>';
 
       (sub.items || []).forEach(function(it){
         html += '<article class="item">' +
@@ -377,15 +396,32 @@ function pintarMenu(data){
                   (it.precio == null
                     ? '<span class="precio consultar">consultar</span>'
                     : '<span class="precio">' + precio(it.precio) + '</span>') +
-                  (it.descripcion
-                    ? '<p>' + esc(it.descripcion) + '</p>'
-                    : '') +
+                  (it.descripcion ? '<p>' + esc(it.descripcion) + '</p>' : '') +
                 '</article>';
       });
     });
 
-    if(sec.pie) html += '<p class="nota-carta"><span>' + esc(sec.pie) + '</span></p>';
-    if(sec.id === "postres") html += '<img class="taza" src="taza.png" alt="" loading="lazy" width="118">';
+    if(sec.id === "postres")
+      html += '<img class="taza" src="taza.png" alt="" loading="lazy" width="132" height="138">';
+    if(sec.pie) html += '<p class="nota-carta">' + esc(sec.pie) + '</p>';
+
+    /* Pase de página: la sección anterior y la siguiente, al alcance */
+    var ant = SECS[i-1], sig = SECS[i+1];
+    html += '<div class="pase">' +
+              '<span class="rubro pase-tit">Sigue la carta</span>' +
+              '<div class="pase-par">' +
+                (ant ? '<button type="button" data-ir="'+(i-1)+'">' +
+                         '<span class="dir">← Anterior</span>' +
+                         '<span class="nom">'+esc(ant.titulo_tematico)+'</span></button>'
+                     : '<span></span>') +
+                (sig ? '<button type="button" class="sig" data-ir="'+(i+1)+'">' +
+                         '<span class="dir">Siguiente →</span>' +
+                         '<span class="nom">'+esc(sig.titulo_tematico)+'</span></button>'
+                     : '<span></span>') +
+              '</div>' +
+              '<button type="button" class="pase-todas" data-todas="1">Todas las secciones</button>' +
+            '</div>';
+
     html += '</div>';
   });
 
@@ -393,27 +429,62 @@ function pintarMenu(data){
   $("#menu").innerHTML   = html;
 
   $("#indice").addEventListener("click", function(ev){
-    var b = ev.target.closest("button"); if(!b) return;
-    var t = b.dataset.t;
-    this.querySelectorAll("button").forEach(function(x){
-      x.setAttribute("aria-pressed", String(x === b));
-    });
-    document.querySelectorAll("#menu .grupo").forEach(function(g){
-      g.hidden = (g.id !== t);
-    });
-    var g = document.getElementById(t);
-    if(g){ observar(g); g.classList.add("on"); }
+    var b = ev.target.closest("button");
+    if(b) irA(+b.dataset.t, false);
+  });
+
+  $("#menu").addEventListener("click", function(ev){
+    var b = ev.target.closest("button");
+    if(!b) return;
+    if(b.dataset.ir !== undefined) irA(+b.dataset.ir, true);
+    if(b.dataset.todas) subirAlIndice();
   });
 
   document.querySelectorAll("#menu .grupo").forEach(observar);
 }
 
-/* ── Identidad y datos ── */
+function irA(i, subir){
+  document.querySelectorAll("#indice button").forEach(function(x,k){
+    x.setAttribute("aria-pressed", String(k === i));
+  });
+  document.querySelectorAll("#menu .grupo").forEach(function(g){
+    g.hidden = (+g.dataset.i !== i);
+  });
+  var g = document.querySelector('#menu .grupo[data-i="'+i+'"]');
+  if(g){ g.classList.add("on"); }
+  if(subir) subirAlIndice();
+}
+
+function subirAlIndice(){
+  var y = $("#carta").getBoundingClientRect().top + window.scrollY - 60;
+  window.scrollTo({ top:y, behavior:"smooth" });
+}
+
+/* ═══ IDENTIDAD ═══ */
 function pintarLocal(local, sello){
   if(local.slogan) $("#slogan").textContent = local.slogan;
   $("#descripcion").textContent = local.descripcion || "";
   $("#pie-dir").textContent = local.direccion || "";
-  if(sello) $("#sello").textContent = "Precios en " + (local.moneda || "CUP") + " · actualizada el " + sello;
+  if(sello) $("#sello").textContent =
+    "Precios en " + (local.moneda || "CUP") + " · actualizada el " + sello;
+
+  pintarEstado(local);
+
+  /* Foto de portada */
+  if(local.portada){
+    var hf = $("#hero-foto");
+    hf.innerHTML = '<img src="'+esc(local.portada)+'" alt="" fetchpriority="high">';
+    hf.hidden = false;
+    $(".hero").classList.add("con-foto");
+  }
+
+  /* Galería */
+  var g = local.galeria || [];
+  $("#galeria").innerHTML = g.map(function(f){
+    return f.img
+      ? '<div class="foto"><img src="'+esc(f.img)+'" alt="'+esc(f.alt||"")+'" loading="lazy"></div>'
+      : '<div class="foto vacia" data-lbl="'+esc(f.alt||"Foto")+'"></div>';
+  }).join("");
 
   var h = (local.horario || []).map(function(x){
     return '<div class="horario"><b>' + esc(x.dias) + '</b>' +
@@ -421,21 +492,21 @@ function pintarLocal(local, sello){
   }).join("");
 
   var contacto = "";
-  if(local.telefono)  contacto += '<p><a href="tel:' + esc(local.telefono.replace(/\s/g,"")) + '">' + esc(local.telefono) + '</a></p>';
-  if(local.whatsapp)  contacto += '<p><a href="https://wa.me/' + esc(local.whatsapp.replace(/\D/g,"")) + '">WhatsApp</a></p>';
-  if(local.instagram) contacto += '<p><a href="https://instagram.com/' + esc(local.instagram.replace("@","")) + '">' + esc(local.instagram) + '</a></p>';
+  if(local.telefono)  contacto += '<p><a href="tel:'+esc(local.telefono.replace(/\s/g,""))+'">'+esc(local.telefono)+'</a></p>';
+  if(local.whatsapp)  contacto += '<p><a href="https://wa.me/'+esc(local.whatsapp.replace(/\D/g,""))+'">WhatsApp</a></p>';
+  if(local.instagram) contacto += '<p><a href="https://instagram.com/'+esc(local.instagram.replace("@",""))+'">'+esc(local.instagram)+'</a></p>';
   if(!contacto) contacto = '<p style="color:var(--tinta-suave)">Añade tu teléfono desde el editor.</p>';
 
   $("#datos").innerHTML =
     '<div class="dato"><span class="rubro">Dirección</span>' +
       '<p>' + esc(local.direccion || "") + '</p>' +
-      (local.mapa ? '<p style="margin-top:9px"><a href="' + esc(local.mapa) + '" target="_blank" rel="noopener">Abrir en el mapa</a></p>' : "") +
+      (local.mapa ? '<p style="margin-top:9px"><a href="'+esc(local.mapa)+'" target="_blank" rel="noopener">Abrir en el mapa</a></p>' : "") +
     '</div>' +
     '<div class="dato"><span class="rubro">Horario</span>' + h + '</div>' +
     '<div class="dato"><span class="rubro">Contacto</span>' + contacto + '</div>';
 }
 
-/* ── Aparición suave ── */
+/* ═══ APARICIÓN ═══ */
 var io = ("IntersectionObserver" in window)
   ? new IntersectionObserver(function(es){
       es.forEach(function(e){
@@ -445,7 +516,6 @@ var io = ("IntersectionObserver" in window)
   : null;
 function observar(el){ if(io) io.observe(el); else el.classList.add("on"); }
 
-/* ── Navegación activa según scroll ── */
 function navActiva(){
   var links = [].slice.call(document.querySelectorAll("nav a"));
   var secs  = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
@@ -465,7 +535,7 @@ function navActiva(){
   marcar();
 }
 
-/* ── Arranque: cache primero para conexiones lentas, luego red ── */
+/* ═══ ARRANQUE ═══ */
 function arrancar(data, deCache){
   try{
     pintarLocal(data.local || {}, data.actualizado);
@@ -486,10 +556,8 @@ fetch("carta.json", { cache:"no-cache" })
   .then(function(r){ if(!r.ok) throw 0; return r.json(); })
   .then(function(d){ arrancar(d, false); })
   .catch(function(){
-    if(!cache){
-      $("#menu").innerHTML =
-        '<p class="fallo">No se pudo cargar la carta. Revisa la conexión y vuelve a intentarlo.</p>';
-    }
+    if(!cache) $("#menu").innerHTML =
+      '<p class="fallo">No se pudo cargar la carta. Revisa la conexión y vuelve a intentarlo.</p>';
   });
 
 })();

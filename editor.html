@@ -168,7 +168,7 @@ function esc(s){
     .replace(/&/g,"&amp;").replace(/</g,"&lt;")
     .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
-function num(n){ return Number(n).toLocaleString("es-ES"); }
+function num(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
 
 var avisoT;
 function aviso(txt){
@@ -204,6 +204,27 @@ function pintar(){
              campo("Cierra","local.horario."+i+".cierra",x.cierra) + '</div>';
          }).join("") +
        '</div></div></details>';
+
+  /* — Imágenes — */
+  var G = L.galeria || (L.galeria = [{img:"",alt:"Salón"},{img:"",alt:"Terraza"},{img:"",alt:"Cocina"}]);
+  h += '<details class="panel"><summary>Imágenes' +
+       '<span class="cuenta">portada y galería</span></summary><div class="cuerpo">' +
+       '<p class="pista" style="margin:0 0 14px">Escribe aquí el nombre del archivo. ' +
+       'Las fotos se suben a GitHub, en la misma carpeta que <b>logo.png</b>. ' +
+       'Máximo 1200 px de ancho y 200 KB por foto.</p>' +
+       '<div class="rejilla">' +
+         campo("Foto de portada (encabezado)","local.portada",L.portada) +
+       '</div>' +
+       '<div style="margin-top:18px"><span class="rubro">Galería de «El lugar»</span>' +
+         G.map(function(f,i){
+           return '<div class="rejilla" style="margin-top:8px">' +
+             campo("Archivo","local.galeria."+i+".img",f.img) +
+             campo("Texto alternativo","local.galeria."+i+".alt",f.alt) + '</div>';
+         }).join("") +
+       '</div>' +
+       '<p class="pista" style="margin-top:14px">Deja el archivo en blanco y el hueco ' +
+       'queda vacío en la web, sin romper nada.</p>' +
+       '</div></details>';
 
   /* — Ajuste global — */
   h += '<div class="ajuste">' +
