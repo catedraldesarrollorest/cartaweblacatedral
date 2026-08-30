@@ -1,0 +1,926 @@
+{
+ "restaurante": "La Catedral",
+ "subtitulo": "Bar · Restaurante",
+ "temporada": null,
+ "slogan": "…para rendir culto a la buena mesa…",
+ "secciones": [
+  {
+   "id": "bebidas",
+   "titulo_tematico": "Bebidas, Cocteles & Batidos",
+   "titulo_clasico": "Bebidas, Cocteles & Batidos",
+   "pie": "La mejor compañía empieza con la mejor bebida",
+   "subsecciones": [
+    {
+     "nombre": "Sin Alcohol",
+     "items": [
+      {
+       "nombre": "Batido de Helado",
+       "descripcion": "",
+       "precio": 900
+      },
+      {
+       "nombre": "Limonada Natural",
+       "descripcion": "limón natural exprimido en la casa, frapeada o sobre las rocas",
+       "precio": 825
+      },
+      {
+       "nombre": "Refrescos enlatados",
+       "descripcion": "355ml",
+       "precio": 770
+      },
+      {
+       "nombre": "Zumos en Conserva",
+       "descripcion": "200ml",
+       "precio": 770
+      },
+      {
+       "nombre": "Jugos Naturales",
+       "descripcion": "500ml",
+       "precio": 825
+      },
+      {
+       "nombre": "Malta Bucanero",
+       "descripcion": "355ml",
+       "precio": 770
+      },
+      {
+       "nombre": "Agua embotellada",
+       "descripcion": "500ml",
+       "precio": 770
+      },
+      {
+       "nombre": "Té Frío",
+       "descripcion": "limón o melocotón, 500ml",
+       "precio": 770
+      }
+     ]
+    },
+    {
+     "nombre": "Cervezas",
+     "items": [
+      {
+       "nombre": "Cristal Barril",
+       "descripcion": "500ml",
+       "precio": 825
+      },
+      {
+       "nombre": "Cristal Botella",
+       "descripcion": "350ml",
+       "precio": 990
+      },
+      {
+       "nombre": "Bucanero Botella",
+       "descripcion": "350ml",
+       "precio": 957
+      },
+      {
+       "nombre": "Cabeza de Lobo Lata",
+       "descripcion": "355ml",
+       "precio": 880
+      },
+      {
+       "nombre": "Cubetazo",
+       "descripcion": "5 botellas · Cristal, Bucanero o mixto · precio fijo",
+       "precio": 4400
+      }
+     ]
+    },
+    {
+     "nombre": "Micheladas",
+     "items": [
+      {
+       "nombre": "Chelada",
+       "descripcion": "hielo, sal, limón",
+       "precio": 1155
+      },
+      {
+       "nombre": "Vampireza",
+       "descripcion": "zumo de tomates",
+       "precio": 1155
+      },
+      {
+       "nombre": "Catedral",
+       "descripcion": "salsa secreta",
+       "precio": 1650
+      }
+     ]
+    },
+    {
+     "nombre": "Los Más Pedidos",
+     "grupo": "cocteles",
+     "items": [
+      {
+       "nombre": "Mojito",
+       "descripcion": "",
+       "precio": 1430
+      },
+      {
+       "nombre": "Piña Colada",
+       "descripcion": "",
+       "precio": 1320
+      },
+      {
+       "nombre": "Margarita",
+       "descripcion": "",
+       "precio": 1375
+      },
+      {
+       "nombre": "Daiquirí",
+       "descripcion": "",
+       "precio": 1320
+      }
+     ]
+    },
+    {
+     "nombre": "Tropicales",
+     "grupo": "cocteles",
+     "items": [
+      {
+       "nombre": "Caipiriña",
+       "descripcion": "",
+       "precio": 1485
+      },
+      {
+       "nombre": "Cahipiroska",
+       "descripcion": "vodka, limón fresco, azúcar y hielo",
+       "precio": 1485
+      },
+      {
+       "nombre": "Sangría",
+       "descripcion": "",
+       "precio": 1485
+      },
+      {
+       "nombre": "Havana Special",
+       "descripcion": "",
+       "precio": 1485
+      },
+      {
+       "nombre": "Aperol Spritz",
+       "descripcion": "Aperol, vino espumoso y rodaja de piña",
+       "precio": 1650
+      }
+     ]
+    },
+    {
+     "nombre": "Internacionales",
+     "grupo": "cocteles",
+     "items": [
+      {
+       "nombre": "Martini",
+       "descripcion": "",
+       "precio": 1650
+      },
+      {
+       "nombre": "Gin Tonic",
+       "descripcion": "",
+       "precio": 1870
+      },
+      {
+       "nombre": "Vodka Tonic",
+       "descripcion": "",
+       "precio": 2420
+      }
+     ]
+    },
+    {
+     "nombre": "Clásicos de la Barra",
+     "grupo": "cocteles",
+     "items": [
+      {
+       "nombre": "Cubalibre",
+       "descripcion": "precio sujeto a licor elegido",
+       "precio": 1650
+      },
+      {
+       "nombre": "Cubanito",
+       "descripcion": "",
+       "precio": 1320
+      },
+      {
+       "nombre": "Screwdriver",
+       "descripcion": "",
+       "precio": 2255
+      },
+      {
+       "nombre": "Bloody Mary",
+       "descripcion": "",
+       "precio": 1760
+      }
+     ]
+    },
+    {
+     "nombre": "Vinos por Copa",
+     "items": [
+      {
+       "nombre": "Hemisferio Sur",
+       "descripcion": "Sauvignon Blanc",
+       "precio": 1056
+      },
+      {
+       "nombre": "Frontera Chardonnay",
+       "descripcion": "Chile",
+       "precio": 1320
+      },
+      {
+       "nombre": "Frontera Cabernet Sauvignon",
+       "descripcion": "Carmenere, Merlot, Chile",
+       "precio": 1320
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "entrantes",
+   "titulo_tematico": "Entrantes & Picaderas",
+   "titulo_clasico": "Entrantes & Picaderas",
+   "pie": "Todo gran momento empieza con una gran entrada",
+   "subsecciones": [
+    {
+     "nombre": "Tesoros para Compartir",
+     "items": [
+      {
+       "nombre": "Papas Fritas de la Sacristía",
+       "descripcion": "",
+       "precio": 1890
+      },
+      {
+       "nombre": "Picadera Clásica",
+       "descripcion": "bolitas de queso, croquetas, bruschettas, maripositas, jamón, queso y chorizo con dip agridulce",
+       "precio": 3150
+      },
+      {
+       "nombre": "Eperlán frito de pescado",
+       "descripcion": "",
+       "precio": 4600
+      },
+      {
+       "nombre": "Tabla de embutidos de la diócesis",
+       "descripcion": "",
+       "precio": 3465
+      },
+      {
+       "nombre": "Bombones de queso y pollo",
+       "descripcion": "",
+       "precio": 1890
+      },
+      {
+       "nombre": "Sopa de pollo",
+       "descripcion": "",
+       "precio": 1260
+      },
+      {
+       "nombre": "Bruschettas de queso del claustro",
+       "descripcion": "",
+       "precio": 1260
+      },
+      {
+       "nombre": "Garbanzos fritos del convento",
+       "descripcion": "",
+       "precio": 2520
+      },
+      {
+       "nombre": "Dados de langosta crujiente",
+       "descripcion": "",
+       "precio": 3780
+      },
+      {
+       "nombre": "Entremes del capítulo",
+       "descripcion": "pan baguette con jamón, queso y chorizo al lado",
+       "precio": 1890
+      },
+      {
+       "nombre": "Tacos del Arca",
+       "descripcion": "cerdo, pollo o res a elegir",
+       "precio": 3780
+      },
+      {
+       "nombre": "Cóctel de Camarones del Iftar",
+       "descripcion": "camarones en salsa rosada fría",
+       "precio": 4500
+      },
+      {
+       "nombre": "Camarones Fritos del Ramadán",
+       "descripcion": "camarones empanados y fritos",
+       "precio": 4900
+      }
+     ]
+    },
+    {
+     "nombre": "Jardines Frescos",
+     "items": [
+      {
+       "nombre": "Ensalada Fresca del jardín",
+       "descripcion": "vegetales de estación",
+       "precio": 1890
+      },
+      {
+       "nombre": "Ensalada de atún del puerto",
+       "descripcion": "",
+       "precio": 1890
+      },
+      {
+       "nombre": "Ensalada de tomates y cebolla",
+       "descripcion": "",
+       "precio": 1260
+      },
+      {
+       "nombre": "Ensalada de pollo crujiente",
+       "descripcion": "",
+       "precio": 2520
+      }
+     ]
+    },
+    {
+     "nombre": "Creaciones de la Cúpula",
+     "items": [
+      {
+       "nombre": "Pizza de queso de la Abadía",
+       "descripcion": "",
+       "precio": 3150
+      },
+      {
+       "nombre": "Pizza de Langosta del trono",
+       "descripcion": "",
+       "precio": 5040
+      },
+      {
+       "nombre": "Pizza de chorizo del monte",
+       "descripcion": "",
+       "precio": 3780
+      },
+      {
+       "nombre": "Pizza de carne molida",
+       "descripcion": "",
+       "precio": 4410
+      },
+      {
+       "nombre": "Pizza de atún del océano",
+       "descripcion": "",
+       "precio": 4095
+      },
+      {
+       "nombre": "Pizza Hawaiana del paraíso",
+       "descripcion": "",
+       "precio": 4095
+      },
+      {
+       "nombre": "Pizza de jamón de la cúpula",
+       "descripcion": "",
+       "precio": 3780
+      },
+      {
+       "nombre": "Pizza de Cebolla de la huerta",
+       "descripcion": "",
+       "precio": 3780
+      },
+      {
+       "nombre": "Pizza de aceitunas del olivar",
+       "descripcion": "",
+       "precio": 4095
+      },
+      {
+       "nombre": "Pizza de Camarones del Bósforo",
+       "descripcion": "",
+       "precio": 6000
+      }
+     ]
+    },
+    {
+     "nombre": "Placeres Terrenales — Hamburguesas",
+     "items": [
+      {
+       "nombre": "Hamburguesa de la Catedral",
+       "descripcion": "200g carne res y cerdo, jamón, queso, chorizo y vegetales",
+       "precio": 3675
+      },
+      {
+       "nombre": "Hamburguesa A Caballo del jinete",
+       "descripcion": "200g carne res y cerdo, jamón, queso, chorizo, vegetales y huevo estrellado",
+       "precio": 3465
+      },
+      {
+       "nombre": "Hamburguesa con queso",
+       "descripcion": "200g carne res y cerdo, queso",
+       "precio": 3465
+      },
+      {
+       "nombre": "Hamburguesa clásica del altar",
+       "descripcion": "200g carne res y cerdo, lechuga, tomate y pepino",
+       "precio": 3150
+      }
+     ]
+    },
+    {
+     "nombre": "Santuario entre Panes",
+     "items": [
+      {
+       "nombre": "Sandwich de milanesa del aprendiz",
+       "descripcion": "",
+       "precio": 2520
+      },
+      {
+       "nombre": "Sandwich de atún de la cripta",
+       "descripcion": "",
+       "precio": 2520
+      },
+      {
+       "nombre": "Sandwich de lomo ahumado y queso",
+       "descripcion": "",
+       "precio": 2835
+      },
+      {
+       "nombre": "Jamón, queso y chorizo",
+       "descripcion": "",
+       "precio": 2520
+      },
+      {
+       "nombre": "Pan con lechón del baptisterio",
+       "descripcion": "",
+       "precio": 2835
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "principales",
+   "titulo_tematico": "Principales",
+   "titulo_clasico": "Principales",
+   "pie": "Platos con alma, sabor y tradición",
+   "subsecciones": [
+    {
+     "nombre": "Platos de la Casa",
+     "items": [
+      {
+       "nombre": "Ropa vieja del feligrés",
+       "descripcion": "carne de res deshilachada y estofada en salsa criolla",
+       "precio": 3938
+      },
+      {
+       "nombre": "Arroz frito de la comunión",
+       "descripcion": "cerdo, pollo, jamón y camarones",
+       "precio": 6000
+      },
+      {
+       "nombre": "Masas de cerdo fritas del confesionario",
+       "descripcion": "tiernas masas fritas en mojo criollo de cebolla y comino",
+       "precio": 4882
+      },
+      {
+       "nombre": "Pescado del Divino",
+       "descripcion": "filete de pescado empanado y frito con salsa rosa",
+       "precio": 5000
+      }
+     ]
+    },
+    {
+     "nombre": "Los Altares de la Casa",
+     "items": [
+      {
+       "nombre": "Banquete de la abadía",
+       "descripcion": "1kg de pollo frito + 4 jarras de cerveza",
+       "precio": 7000
+      },
+      {
+       "nombre": "Lomo ahumado del Paraíso",
+       "descripcion": "con queso y piña",
+       "precio": 5040
+      },
+      {
+       "nombre": "El Nirvana",
+       "descripcion": "filete de pescado con camarones, napado en salsa bechamel y gratinado con queso",
+       "precio": 8000
+      },
+      {
+       "nombre": "Arroz al Pastor",
+       "descripcion": "arroz meloso de cerdo y pollo",
+       "precio": 3938
+      },
+      {
+       "nombre": "Paella de Mariscos",
+       "descripcion": "langosta, mejillones, almejas, calamares y pescado",
+       "precio": 5040
+      },
+      {
+       "nombre": "Camarones del Buda",
+       "descripcion": "colas de camarones frescos a su antojo: a la plancha, enchilados o rebozados y fritos",
+       "precio": 7000
+      }
+     ]
+    },
+    {
+     "nombre": "Sabores Tradicionales",
+     "items": [
+      {
+       "nombre": "Pescado a las Brazas del Señor",
+       "descripcion": "filete de pescado a la plancha en salsa de limón, mantequilla y perejil",
+       "precio": 4600
+      },
+      {
+       "nombre": "Bistec encebollado de Res a la plancha",
+       "descripcion": "con cebolla caramelizada",
+       "precio": 4410
+      },
+      {
+       "nombre": "Vaca Frita Crujiente del Altar",
+       "descripcion": "carne de res deshilachada en mojo de limón, cebolla y ajos frescos",
+       "precio": 3780
+      },
+      {
+       "nombre": "Bistec de cerdo al grill",
+       "descripcion": "bañado en mojo criollo",
+       "precio": 3938
+      },
+      {
+       "nombre": "Terneritas Sagradas",
+       "descripcion": "tiernas fajitas de res salteadas con cebolla, pimiento y champiñones",
+       "precio": 3780
+      },
+      {
+       "nombre": "Fajitas de San Mateo",
+       "descripcion": "pollo al ajillo salteado con champiñones",
+       "precio": 3780
+      },
+      {
+       "nombre": "Milanesa de pollo o cerdo",
+       "descripcion": "con espaguetis",
+       "precio": 3780
+      },
+      {
+       "nombre": "Cola de Langosta",
+       "descripcion": "enchilada, frita o a la plancha",
+       "precio": 5040
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "postres",
+   "titulo_tematico": "Postres e Infusiones",
+   "titulo_clasico": "Postres e Infusiones",
+   "pie": "El dulce final que todo gran momento merece",
+   "subsecciones": [
+    {
+     "nombre": "Los Reyes Magos",
+     "items": [
+      {
+       "nombre": "Gaspar",
+       "descripcion": "1 bola de helado",
+       "precio": 700
+      },
+      {
+       "nombre": "Melchor",
+       "descripcion": "2 bolas de helado",
+       "precio": 1300
+      },
+      {
+       "nombre": "Baltasar",
+       "descripcion": "sunday de 3 bolas",
+       "precio": 2000
+      },
+      {
+       "nombre": "Melquisedec",
+       "descripcion": "suero cremoso de helado",
+       "precio": 1500
+      }
+     ]
+    },
+    {
+     "nombre": "Dulces del Cónclave",
+     "items": [
+      {
+       "nombre": "Tres Leches",
+       "descripcion": "bizcocho esponjoso bañado en leche evaporada, condensada y nata, coronado con crema batida",
+       "precio": 1400
+      },
+      {
+       "nombre": "Flan del Cardenal",
+       "descripcion": "flan de huevo clásico con caramelo dorado",
+       "precio": 1400
+      },
+      {
+       "nombre": "Tiramisú",
+       "descripcion": "capas de bizcocho savoiardi, mascarpone y café espresso, espolvoreado con cacao",
+       "precio": 1400
+      },
+      {
+       "nombre": "Brownie Caliente con Helado",
+       "descripcion": "brownie de chocolate caliente con bola de helado de vainilla",
+       "precio": 2000
+      }
+     ]
+    },
+    {
+     "nombre": "Infusiones",
+     "items": [
+      {
+       "nombre": "Café espresso del altar",
+       "descripcion": "",
+       "precio": 700
+      },
+      {
+       "nombre": "Café con leche de la sacristía",
+       "descripcion": "",
+       "precio": 850
+      },
+      {
+       "nombre": "Capuchino de la cúpula",
+       "descripcion": "",
+       "precio": 850
+      },
+      {
+       "nombre": "Té · Manzanilla · Tila · Menta Poleo",
+       "descripcion": "",
+       "precio": 700
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "licores",
+   "titulo_tematico": "Licores & Espiritosos",
+   "titulo_clasico": "Licores & Espiritosos",
+   "pie": "Porque algunos momentos merecen alargarse",
+   "subsecciones": [
+    {
+     "nombre": "Whisky",
+     "items": [
+      {
+       "nombre": "100 Pipers",
+       "descripcion": "",
+       "precio": 950
+      },
+      {
+       "nombre": "Jameson",
+       "descripcion": "",
+       "precio": 1400
+      },
+      {
+       "nombre": "Ballantines",
+       "descripcion": "",
+       "precio": 950
+      },
+      {
+       "nombre": "Chivas Regal 12 años",
+       "descripcion": "",
+       "precio": 2350
+      },
+      {
+       "nombre": "Chivas Regal 15 años",
+       "descripcion": "",
+       "precio": 5700
+      },
+      {
+       "nombre": "Chivas Regal 18 años",
+       "descripcion": "",
+       "precio": 6500
+      },
+      {
+       "nombre": "The Glenlivet Founder's Reserve",
+       "descripcion": "",
+       "precio": 1900
+      }
+     ]
+    },
+    {
+     "nombre": "Ron",
+     "items": [
+      {
+       "nombre": "Havana 3 Años",
+       "descripcion": "",
+       "precio": 500
+      },
+      {
+       "nombre": "Havana Especial",
+       "descripcion": "",
+       "precio": 500
+      },
+      {
+       "nombre": "Habana Ritual",
+       "descripcion": "",
+       "precio": 550
+      },
+      {
+       "nombre": "Havana Reserva",
+       "descripcion": "",
+       "precio": 850
+      },
+      {
+       "nombre": "Havana 7 Años",
+       "descripcion": "",
+       "precio": 1200
+      },
+      {
+       "nombre": "Pacto Navio",
+       "descripcion": "",
+       "precio": 5150
+      },
+      {
+       "nombre": "Selección de Maestros",
+       "descripcion": "",
+       "precio": 4500
+      }
+     ]
+    },
+    {
+     "nombre": "Brandys y Cognac",
+     "items": [
+      {
+       "nombre": "Torres V",
+       "descripcion": "",
+       "precio": 600
+      },
+      {
+       "nombre": "Torres X",
+       "descripcion": "",
+       "precio": 750
+      },
+      {
+       "nombre": "Torres XV",
+       "descripcion": "",
+       "precio": 900
+      },
+      {
+       "nombre": "Torres XX",
+       "descripcion": "",
+       "precio": 1200
+      },
+      {
+       "nombre": "Cognac Martell",
+       "descripcion": "",
+       "precio": 4250
+      }
+     ]
+    },
+    {
+     "nombre": "Cremas y Licores",
+     "items": [
+      {
+       "nombre": "Licor de Café",
+       "descripcion": "",
+       "precio": 726
+      },
+      {
+       "nombre": "Licor de Melocotón",
+       "descripcion": "",
+       "precio": 726
+      },
+      {
+       "nombre": "Licor de Melón",
+       "descripcion": "",
+       "precio": 726
+      },
+      {
+       "nombre": "Rua Vieja crema",
+       "descripcion": "",
+       "precio": 726
+      },
+      {
+       "nombre": "Rua Vieja chocolate",
+       "descripcion": "",
+       "precio": 726
+      },
+      {
+       "nombre": "Crema Catalana",
+       "descripcion": "",
+       "precio": 825
+      },
+      {
+       "nombre": "Crema de Whisky",
+       "descripcion": "",
+       "precio": 825
+      },
+      {
+       "nombre": "Amaretto",
+       "descripcion": "",
+       "precio": 550
+      },
+      {
+       "nombre": "Licor Limoncello",
+       "descripcion": "",
+       "precio": 550
+      },
+      {
+       "nombre": "Triple Sec",
+       "descripcion": "",
+       "precio": 500
+      }
+     ]
+    },
+    {
+     "nombre": "Tequilas",
+     "items": [
+      {
+       "nombre": "Olmeca Blanco",
+       "descripcion": "",
+       "precio": 900
+      },
+      {
+       "nombre": "Olmeca Reposado",
+       "descripcion": "",
+       "precio": 1250
+      }
+     ]
+    },
+    {
+     "nombre": "Ginebras",
+     "items": [
+      {
+       "nombre": "Beefeater",
+       "descripcion": "",
+       "precio": 650
+      }
+     ]
+    },
+    {
+     "nombre": "Vodkas",
+     "items": [
+      {
+       "nombre": "Absolut",
+       "descripcion": "",
+       "precio": 1000
+      }
+     ]
+    },
+    {
+     "nombre": "Vermut",
+     "items": [
+      {
+       "nombre": "Seco",
+       "descripcion": "",
+       "precio": 600
+      },
+      {
+       "nombre": "Dulce",
+       "descripcion": "",
+       "precio": 600
+      }
+     ]
+    },
+    {
+     "nombre": "Anisados",
+     "items": [
+      {
+       "nombre": "Sambuca San Faustino",
+       "descripcion": "",
+       "precio": 750
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "local": {
+  "nombre": "La Catedral",
+  "tagline": "Bar · Restaurante",
+  "slogan": "…para rendir culto a la buena mesa…",
+  "descripcion": "En pleno Vedado, La Catedral es un salón y una terraza donde la mesa se toma en serio. Cocina cubana de siempre, brasas, mariscos frescos y una barra que trabaja con fruta natural y hielo de verdad.",
+  "direccion": "Calle 8 e/ Calzada y 5ta, Vedado, La Habana",
+  "telefono": "",
+  "whatsapp": "",
+  "instagram": "",
+  "mapa": "https://maps.google.com/?q=Calle+8+entre+Calzada+y+5ta,+Vedado,+La+Habana",
+  "moneda": "CUP",
+  "horario": [
+   {
+    "dias": "Lunes a Jueves",
+    "abre": "12:00",
+    "cierra": "23:00"
+   },
+   {
+    "dias": "Viernes y Sábado",
+    "abre": "12:00",
+    "cierra": "01:00"
+   },
+   {
+    "dias": "Domingo",
+    "abre": "12:00",
+    "cierra": "23:00"
+   }
+  ],
+  "notas": [
+   "Los precios están expresados en CUP e incluyen impuestos.",
+   "Consulte con su camarero por alérgenos y disponibilidad del día."
+  ],
+  "portada": "cate1",
+  "galeria": [
+   {
+    "img": "cate1",
+    "alt": "Salón"
+   },
+   {
+    "img": "",
+    "alt": "Terraza"
+   },
+   {
+    "img": "",
+    "alt": "Cocina"
+   }
+  ]
+ },
+ "actualizado": "2026-08-30"
+}
