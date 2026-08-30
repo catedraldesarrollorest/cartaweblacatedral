@@ -170,6 +170,24 @@ un archivo a su ordenador. El cambio real sólo ocurre al subirlo a GitHub.
 
 ---
 
+## Ampliar fotos
+
+Las fotos de «El lugar» se amplían al pulsarlas. Cada una necesita **dos
+archivos**:
+
+| Campo en el editor | Para qué |
+|---|---|
+| Archivo | La miniatura recortada a 4:5 de la galería |
+| Archivo grande | La foto completa que se ve al ampliar |
+
+Si dejas el grande en blanco, al ampliar se usa la miniatura. Funciona, pero
+se ve peor.
+
+Dentro del visor: flechas para pasar de foto, deslizar en el móvil, `Esc` o
+pulsar fuera para cerrar.
+
+---
+
 ## Sobre el cache de imágenes
 
 Si cambias una foto **y mantienes el mismo nombre de archivo**, puede tardar

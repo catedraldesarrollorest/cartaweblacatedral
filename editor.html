@@ -297,11 +297,12 @@ function pintar(){
          G.map(function(f,i){
            return '<div class="rejilla" style="margin-top:8px">' +
              campo("Archivo","local.galeria."+i+".img",f.img) +
+             campo("Archivo grande (al ampliar)","local.galeria."+i+".grande",f.grande) +
              campo("Texto alternativo","local.galeria."+i+".alt",f.alt) + '</div>';
          }).join("") +
        '</div>' +
        '<p class="pista" style="margin-top:14px">Deja el archivo en blanco y el hueco ' +
-       'queda vacío en la web, sin romper nada.</p>' +
+       'queda vacío en la web, sin romper nada. El «archivo grande» es la foto completa que se ve al ampliar.</p>' +
        '</div></details>';
 
   /* — Ajuste global — */

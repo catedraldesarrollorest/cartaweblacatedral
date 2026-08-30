@@ -910,14 +910,17 @@
   "galeria": [
    {
     "img": "terraza.webp",
+    "grande": "terraza-grande.webp",
     "alt": "Terraza de La Catedral al atardecer"
    },
    {
     "img": "barra.webp",
+    "grande": "barra-grande.webp",
     "alt": "Cocteles de la casa"
    },
    {
     "img": "mesa.webp",
+    "grande": "mesa-grande.webp",
     "alt": "Picadera de chorizos con pan tostado"
    }
   ]
