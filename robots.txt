@@ -3,4 +3,4 @@ Allow: /
 Disallow: /editor
 Disallow: /editor.html
 
-Sitemap: https://lacatedral.vercel.app/sitemap.xml
+Sitemap: https://cartaweblacatedral-kosn.vercel.app/sitemap.xml
