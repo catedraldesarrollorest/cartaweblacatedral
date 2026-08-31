@@ -76,7 +76,7 @@
       {
        "nombre": "Cabeza de Lobo Lata",
        "descripcion": "355ml",
-       "precio": 880
+       "precio": 700
       },
       {
        "nombre": "Cubetazo",
@@ -925,5 +925,5 @@
    }
   ]
  },
- "actualizado": "2026-08-30"
+ "actualizado": "2026-08-31"
 }
