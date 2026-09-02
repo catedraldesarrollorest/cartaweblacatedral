@@ -909,9 +909,24 @@
   "portada": "portada.webp",
   "galeria": [
    {
+    "img": "mesa-servida.webp",
+    "grande": "mesa-servida-grande.webp",
+    "alt": "Mesa servida: hamburguesa, papas y embutidos"
+   },
+   {
     "img": "terraza.webp",
     "grande": "terraza-grande.webp",
     "alt": "Terraza de La Catedral al atardecer"
+   },
+   {
+    "img": "hamburguesa.webp",
+    "grande": "hamburguesa-grande.webp",
+    "alt": "Hamburguesa A Caballo del jinete"
+   },
+   {
+    "img": "cerveza.webp",
+    "grande": "cerveza-grande.webp",
+    "alt": "Cerveza Cristal bien fría"
    },
    {
     "img": "barra.webp",
@@ -919,11 +934,11 @@
     "alt": "Cocteles de la casa"
    },
    {
-    "img": "mesa.webp",
-    "grande": "mesa-grande.webp",
-    "alt": "Picadera de chorizos con pan tostado"
+    "img": "papas.webp",
+    "grande": "papas-grande.webp",
+    "alt": "Papas fritas de la Sacristía"
    }
   ]
  },
- "actualizado": "2026-08-31"
+ "actualizado": "2026-09-01"
 }

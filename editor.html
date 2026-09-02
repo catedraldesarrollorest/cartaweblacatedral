@@ -284,7 +284,7 @@ function pintar(){
        '</div></div></details>';
 
   /* — Imágenes — */
-  var G = L.galeria || (L.galeria = [{img:"",alt:"Salón"},{img:"",alt:"Terraza"},{img:"",alt:"Cocina"}]);
+  var G = L.galeria || (L.galeria = []);
   h += '<details class="panel"><summary>Imágenes' +
        '<span class="cuenta">portada y galería</span></summary><div class="cuerpo">' +
        '<p class="pista" style="margin:0 0 14px">Escribe aquí el nombre del archivo. ' +
@@ -293,13 +293,16 @@ function pintar(){
        '<div class="rejilla">' +
          campo("Foto de portada (encabezado)","local.portada",L.portada) +
        '</div>' +
-       '<div style="margin-top:18px"><span class="rubro">Galería de «El lugar»</span>' +
+       '<div style="margin-top:18px"><span class="rubro">Galería · ' + G.length + ' fotos</span>' +
          G.map(function(f,i){
-           return '<div class="rejilla" style="margin-top:8px">' +
+           return '<div class="rejilla" style="margin-top:8px;align-items:end">' +
              campo("Archivo","local.galeria."+i+".img",f.img) +
              campo("Archivo grande (al ampliar)","local.galeria."+i+".grande",f.grande) +
-             campo("Texto alternativo","local.galeria."+i+".alt",f.alt) + '</div>';
+             campo("Texto alternativo","local.galeria."+i+".alt",f.alt) +
+             '<button class="mini peligro" data-delfoto="'+i+'" style="max-width:100px">Quitar</button>' +
+           '</div>';
          }).join("") +
+         '<button style="margin-top:12px" data-addfoto="1">+ Añadir foto</button>' +
        '</div>' +
        '<p class="pista" style="margin-top:14px">Deja el archivo en blanco y el hueco ' +
        'queda vacío en la web, sin romper nada. El «archivo grande» es la foto completa que se ve al ampliar.</p>' +
@@ -409,6 +412,14 @@ function enlazar(){
         D.secciones[s[0]].subsecciones.splice(s[1],1);
         marcarSucio(); pintar(); aviso("Grupo eliminado");
       }
+    }
+    if(b.dataset.addfoto){
+      (D.local.galeria = D.local.galeria || []).push({img:"",grande:"",alt:""});
+      marcarSucio(); pintar(); aviso("Foto añadida");
+    }
+    if(b.dataset.delfoto){
+      D.local.galeria.splice(+b.dataset.delfoto, 1);
+      marcarSucio(); pintar(); aviso("Foto quitada");
     }
     if(b.id === "aj-ir") ajustar();
   });
