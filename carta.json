@@ -247,7 +247,7 @@
       },
       {
        "nombre": "Picadera Clásica",
-       "descripcion": "bolitas de queso, croquetas, bruschettas, maripositas, jamón, queso y chorizo con dip agridulce",
+       "descripcion": "bolitas de queso, croquetas, bruschettas, maripositas, jamón, queso y chorizo con salsa agridulce",
        "precio": 3150
       },
       {
@@ -940,5 +940,5 @@
    }
   ]
  },
- "actualizado": "2026-09-01"
+ "actualizado": "2026-09-21"
 }
