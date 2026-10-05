@@ -16,42 +16,42 @@
       {
        "nombre": "Batido de Helado",
        "descripcion": "",
-       "precio": 945
+       "precio": 999
       },
       {
        "nombre": "Limonada Frappé",
        "descripcion": "sabores a elegir: maracuyá, fresa o frambuesa",
-       "precio": 945
+       "precio": 950
       },
       {
        "nombre": "Limonada Natural",
        "descripcion": "limón natural exprimido en la casa, frapeada o sobre las rocas",
-       "precio": 840
+       "precio": 850
       },
       {
        "nombre": "Refrescos enlatados",
        "descripcion": "355ml",
-       "precio": 809
+       "precio": 850
       },
       {
        "nombre": "Zumos en Conserva",
        "descripcion": "200ml",
-       "precio": 809
+       "precio": 850
       },
       {
        "nombre": "Jugos Naturales",
-       "descripcion": "500ml",
-       "precio": 866
+       "descripcion": "250ml",
+       "precio": 850
       },
       {
        "nombre": "Malta Bucanero",
        "descripcion": "355ml",
-       "precio": 809
+       "precio": 850
       },
       {
        "nombre": "Agua embotellada",
        "descripcion": "500ml",
-       "precio": 809
+       "precio": 850
       }
      ]
     },
@@ -90,18 +90,18 @@
      "items": [
       {
        "nombre": "Chelada",
-       "descripcion": "hielo, sal, limón",
-       "precio": 1213
+       "descripcion": "preparación con hielo, sal y limón · la cerveza se pide aparte",
+       "precio": 300
       },
       {
        "nombre": "Vampireza",
-       "descripcion": "zumo de tomates",
-       "precio": 1213
+       "descripcion": "preparación con zumo de tomates · la cerveza se pide aparte",
+       "precio": 300
       },
       {
        "nombre": "Catedral",
-       "descripcion": "salsa secreta",
-       "precio": 1733
+       "descripcion": "preparación con salsa secreta · la cerveza se pide aparte",
+       "precio": 300
       }
      ]
     },
@@ -112,22 +112,22 @@
       {
        "nombre": "Mojito",
        "descripcion": "",
-       "precio": 1502
+       "precio": 1500
       },
       {
        "nombre": "Piña Colada",
        "descripcion": "",
-       "precio": 1386
+       "precio": 1500
       },
       {
        "nombre": "Margarita",
        "descripcion": "",
-       "precio": 1444
+       "precio": 1500
       },
       {
        "nombre": "Daiquirí",
-       "descripcion": "",
-       "precio": 1386
+       "descripcion": "clásico o con sabores a elegir: maracuyá, fresa o frambuesa",
+       "precio": 1500
       }
      ]
     },
@@ -940,5 +940,5 @@
    }
   ]
  },
- "actualizado": "2026-10-01"
+ "actualizado": "2026-10-05"
 }
