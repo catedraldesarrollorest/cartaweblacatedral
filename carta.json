@@ -16,42 +16,42 @@
             {
               "nombre": "Batido de Helado",
               "descripcion": "",
-              "precio": 1.5
+              "precio": "1.50"
             },
             {
               "nombre": "Limonada frapeada de frutas",
               "descripcion": "sabores a elegir: maracuyá, fresa o frambuesa",
-              "precio": 1.25
+              "precio": "1.25"
             },
             {
               "nombre": "Limonada Natural",
               "descripcion": "limón natural exprimido en la casa, frapeada o sobre las rocas",
-              "precio": 0.95
+              "precio": "0.95"
             },
             {
               "nombre": "Refrescos enlatados",
               "descripcion": "355ml",
-              "precio": 1.0
+              "precio": "1.00"
             },
             {
               "nombre": "Zumos en Conserva",
               "descripcion": "200ml",
-              "precio": 0.9
+              "precio": "0.90"
             },
             {
               "nombre": "Jugos Naturales",
               "descripcion": "250ml",
-              "precio": 0.85
+              "precio": "0.85"
             },
             {
               "nombre": "Malta Bucanero",
               "descripcion": "355ml",
-              "precio": 1.4
+              "precio": "1.40"
             },
             {
               "nombre": "Agua embotellada",
               "descripcion": "500ml",
-              "precio": 0.75
+              "precio": "0.75"
             }
           ]
         },
@@ -61,27 +61,27 @@
             {
               "nombre": "Cristal Barril",
               "descripcion": "500ml",
-              "precio": 1.25
+              "precio": "1.25"
             },
             {
               "nombre": "Cristal Botella",
               "descripcion": "350ml",
-              "precio": 1.5
+              "precio": "1.50"
             },
             {
               "nombre": "Bucanero Botella",
               "descripcion": "350ml",
-              "precio": 1.5
+              "precio": "1.50"
             },
             {
               "nombre": "Cabeza de Lobo Lata",
               "descripcion": "355ml",
-              "precio": 1.0
+              "precio": "1.00"
             },
             {
               "nombre": "Cubetazo",
               "descripcion": "5 botellas · Cristal, Bucanero o mixto · precio fijo",
-              "precio": 6.99
+              "precio": "6.99"
             }
           ]
         },
@@ -91,17 +91,17 @@
             {
               "nombre": "Chelada",
               "descripcion": "preparación con hielo, sal y limón · la cerveza se pide aparte",
-              "precio": 0.5
+              "precio": "0.50"
             },
             {
               "nombre": "Vampireza",
               "descripcion": "preparación con zumo de tomates · la cerveza se pide aparte",
-              "precio": 0.5
+              "precio": "0.50"
             },
             {
               "nombre": "Catedral",
               "descripcion": "preparación con salsa secreta · la cerveza se pide aparte",
-              "precio": 0.5
+              "precio": "0.50"
             }
           ]
         },
@@ -112,22 +112,22 @@
             {
               "nombre": "Mojito",
               "descripcion": "",
-              "precio": 1.85
+              "precio": "1.85"
             },
             {
               "nombre": "Piña Colada",
               "descripcion": "",
-              "precio": 1.85
+              "precio": "1.85"
             },
             {
               "nombre": "Margarita",
               "descripcion": "",
-              "precio": 1.85
+              "precio": "1.85"
             },
             {
               "nombre": "Daiquirí",
               "descripcion": "clásico o con sabores a elegir: maracuyá, fresa o frambuesa",
-              "precio": 1.85
+              "precio": "1.85"
             }
           ]
         },
@@ -138,27 +138,27 @@
             {
               "nombre": "Caipiriña",
               "descripcion": "",
-              "precio": 1.9
+              "precio": "1.90"
             },
             {
               "nombre": "Cahipiroska",
               "descripcion": "vodka, limón fresco, azúcar y hielo",
-              "precio": 1.9
+              "precio": "1.90"
             },
             {
               "nombre": "Sangría",
               "descripcion": "",
-              "precio": 1.9
+              "precio": "1.90"
             },
             {
               "nombre": "Havana Special",
               "descripcion": "",
-              "precio": 1.9
+              "precio": "1.90"
             },
             {
               "nombre": "Aperol Spritz",
               "descripcion": "Aperol, vino espumoso y rodaja de piña",
-              "precio": 2.15
+              "precio": "2.15"
             }
           ]
         },
@@ -169,17 +169,17 @@
             {
               "nombre": "Martini",
               "descripcion": "",
-              "precio": 2.15
+              "precio": "2.15"
             },
             {
               "nombre": "Gin Tonic",
               "descripcion": "",
-              "precio": 2.4
+              "precio": "2.40"
             },
             {
               "nombre": "Vodka Tonic",
               "descripcion": "",
-              "precio": 3.1
+              "precio": "3.10"
             }
           ]
         },
@@ -190,22 +190,22 @@
             {
               "nombre": "Cubalibre",
               "descripcion": "precio sujeto a licor elegido",
-              "precio": 2.15
+              "precio": "2.15"
             },
             {
               "nombre": "Cubanito",
               "descripcion": "",
-              "precio": 1.7
+              "precio": "1.70"
             },
             {
               "nombre": "Screwdriver",
               "descripcion": "",
-              "precio": 2.9
+              "precio": "2.90"
             },
             {
               "nombre": "Bloody Mary",
               "descripcion": "",
-              "precio": 2.25
+              "precio": "2.25"
             }
           ]
         },
@@ -215,17 +215,17 @@
             {
               "nombre": "Hemisferio Sur",
               "descripcion": "Sauvignon Blanc",
-              "precio": 1.35
+              "precio": "1.35"
             },
             {
               "nombre": "Frontera Chardonnay",
               "descripcion": "Chile",
-              "precio": 1.7
+              "precio": "1.70"
             },
             {
               "nombre": "Frontera Cabernet Sauvignon",
               "descripcion": "Carmenere, Merlot, Chile",
-              "precio": 1.7
+              "precio": "1.70"
             }
           ]
         }
@@ -243,72 +243,72 @@
             {
               "nombre": "Papas Fritas de la Sacristía",
               "descripcion": "",
-              "precio": 2.45
+              "precio": "2.45"
             },
             {
               "nombre": "Picadera Clásica",
               "descripcion": "bolitas de queso, croquetas, bruschettas, maripositas, jamón, queso y chorizo con dip agridulce",
-              "precio": 4.05
+              "precio": "4.05"
             },
             {
               "nombre": "Eperlán frito de pescado",
               "descripcion": "",
-              "precio": 5.95
+              "precio": "5.95"
             },
             {
               "nombre": "Tabla de embutidos de la diócesis",
               "descripcion": "",
-              "precio": 4.45
+              "precio": "4.45"
             },
             {
               "nombre": "Bombones de queso y pollo",
               "descripcion": "",
-              "precio": 2.45
+              "precio": "2.45"
             },
             {
               "nombre": "Dedos de queso fritos del monasterio",
               "descripcion": "queso empanado, dorado y crujiente, con dip agridulce",
-              "precio": 3.25
+              "precio": "3.25"
             },
             {
               "nombre": "Sopa de pollo",
               "descripcion": "",
-              "precio": 1.65
+              "precio": "1.65"
             },
             {
               "nombre": "Bruschettas de queso del claustro",
               "descripcion": "",
-              "precio": 1.65
+              "precio": "1.65"
             },
             {
               "nombre": "Garbanzos fritos del convento",
               "descripcion": "",
-              "precio": 3.25
+              "precio": "3.25"
             },
             {
               "nombre": "Dados de langosta crujiente",
               "descripcion": "",
-              "precio": 4.85
+              "precio": "4.85"
             },
             {
               "nombre": "Entremes del capítulo",
               "descripcion": "pan baguette con jamón, queso y chorizo al lado",
-              "precio": 2.45
+              "precio": "2.45"
             },
             {
               "nombre": "Tacos del Arca",
               "descripcion": "cerdo, pollo o res a elegir",
-              "precio": 4.85
+              "precio": "4.85"
             },
             {
               "nombre": "Cóctel de Camarones del Iftar",
               "descripcion": "camarones en salsa rosada fría",
-              "precio": 5.8
+              "precio": "5.80"
             },
             {
               "nombre": "Camarones Fritos del Ramadán",
               "descripcion": "camarones empanados y fritos",
-              "precio": 6.3
+              "precio": "6.30"
             }
           ]
         },
@@ -318,22 +318,22 @@
             {
               "nombre": "Ensalada Fresca del jardín",
               "descripcion": "vegetales de estación",
-              "precio": 2.45
+              "precio": "2.45"
             },
             {
               "nombre": "Ensalada de atún del puerto",
               "descripcion": "",
-              "precio": 2.45
+              "precio": "2.45"
             },
             {
               "nombre": "Ensalada de tomates y cebolla",
               "descripcion": "",
-              "precio": 1.65
+              "precio": "1.65"
             },
             {
               "nombre": "Ensalada de pollo crujiente",
               "descripcion": "",
-              "precio": 3.25
+              "precio": "3.25"
             }
           ]
         },
@@ -343,52 +343,52 @@
             {
               "nombre": "Pizza de queso de la Abadía",
               "descripcion": "",
-              "precio": 4.05
+              "precio": "4.05"
             },
             {
               "nombre": "Pizza de Langosta del trono",
               "descripcion": "",
-              "precio": 6.5
+              "precio": "6.50"
             },
             {
               "nombre": "Pizza de chorizo del monte",
               "descripcion": "",
-              "precio": 4.85
+              "precio": "4.85"
             },
             {
               "nombre": "Pizza de carne molida",
               "descripcion": "",
-              "precio": 5.7
+              "precio": "5.70"
             },
             {
               "nombre": "Pizza de atún del océano",
               "descripcion": "",
-              "precio": 5.3
+              "precio": "5.30"
             },
             {
               "nombre": "Pizza Hawaiana del paraíso",
               "descripcion": "",
-              "precio": 5.3
+              "precio": "5.30"
             },
             {
               "nombre": "Pizza de jamón de la cúpula",
               "descripcion": "",
-              "precio": 4.85
+              "precio": "4.85"
             },
             {
               "nombre": "Pizza de Cebolla de la huerta",
               "descripcion": "",
-              "precio": 4.85
+              "precio": "4.85"
             },
             {
               "nombre": "Pizza de aceitunas del olivar",
               "descripcion": "",
-              "precio": 5.3
+              "precio": "5.30"
             },
             {
               "nombre": "Pizza de Camarones del Bósforo",
               "descripcion": "",
-              "precio": 7.75
+              "precio": "7.75"
             }
           ]
         },
@@ -398,22 +398,22 @@
             {
               "nombre": "Hamburguesa de la Catedral",
               "descripcion": "200g carne res y cerdo, jamón, queso, chorizo y vegetales",
-              "precio": 4.75
+              "precio": "4.75"
             },
             {
               "nombre": "Hamburguesa A Caballo del jinete",
               "descripcion": "200g carne res y cerdo, jamón, queso, chorizo, vegetales y huevo estrellado",
-              "precio": 4.45
+              "precio": "4.45"
             },
             {
               "nombre": "Hamburguesa con queso",
               "descripcion": "200g carne res y cerdo, queso",
-              "precio": 4.45
+              "precio": "4.45"
             },
             {
               "nombre": "Hamburguesa clásica del altar",
               "descripcion": "200g carne res y cerdo, lechuga, tomate y pepino",
-              "precio": 4.05
+              "precio": "4.05"
             }
           ]
         },
@@ -423,27 +423,27 @@
             {
               "nombre": "Sandwich de milanesa del aprendiz",
               "descripcion": "",
-              "precio": 3.25
+              "precio": "3.25"
             },
             {
               "nombre": "Sandwich de atún de la cripta",
               "descripcion": "",
-              "precio": 3.25
+              "precio": "3.25"
             },
             {
               "nombre": "Sandwich de lomo ahumado y queso",
               "descripcion": "",
-              "precio": 3.65
+              "precio": "3.65"
             },
             {
               "nombre": "Jamón, queso y chorizo",
               "descripcion": "",
-              "precio": 3.25
+              "precio": "3.25"
             },
             {
               "nombre": "Pan con lechón del baptisterio",
               "descripcion": "",
-              "precio": 3.65
+              "precio": "3.65"
             }
           ]
         }
@@ -461,22 +461,22 @@
             {
               "nombre": "Ropa vieja del feligrés",
               "descripcion": "carne de res deshilachada y estofada en salsa criolla",
-              "precio": 5.5
+              "precio": "5.50"
             },
             {
               "nombre": "Arroz frito de la comunión",
               "descripcion": "cerdo, pollo, jamón y camarones",
-              "precio": 6.95
+              "precio": "6.95"
             },
             {
               "nombre": "Masas de cerdo fritas del confesionario",
               "descripcion": "tiernas masas fritas en mojo criollo de cebolla y comino",
-              "precio": 6.5
+              "precio": "6.50"
             },
             {
               "nombre": "Pescado del Divino",
               "descripcion": "filete de pescado empanado y frito con salsa rosa",
-              "precio": 6.45
+              "precio": "6.45"
             }
           ]
         },
@@ -486,42 +486,42 @@
             {
               "nombre": "Banquete de la abadía",
               "descripcion": "1kg de pollo frito + 4 jarras de cerveza",
-              "precio": 9.05
+              "precio": "9.05"
             },
             {
               "nombre": "Lomo ahumado del Paraíso",
               "descripcion": "con queso y piña",
-              "precio": 6.5
+              "precio": "6.50"
             },
             {
               "nombre": "El Nirvana",
               "descripcion": "filete de pescado con camarones, napado en salsa bechamel y gratinado con queso",
-              "precio": 9.99
+              "precio": "9.99"
             },
             {
               "nombre": "Arroz al Pastor",
               "descripcion": "arroz meloso de cerdo y pollo",
-              "precio": 5.1
+              "precio": "5.10"
             },
             {
               "nombre": "Paella de Mariscos",
               "descripcion": "langosta, mejillones, almejas, calamares y pescado",
-              "precio": 6.5
+              "precio": "6.50"
             },
             {
               "nombre": "Camarones del Buda",
               "descripcion": "colas de camarones frescos a su antojo: a la plancha, enchilados o rebozados y fritos",
-              "precio": 9.05
+              "precio": "9.05"
             },
             {
               "nombre": "Langosta real del trono",
               "descripcion": "langosta fresca al grill, enchilada o en gran fritura",
-              "precio": 9.05
+              "precio": "9.05"
             },
             {
               "nombre": "Filete Mignon de la sagrada orden",
               "descripcion": "medallón de res tierno a la plancha con salsa de vino tinto",
-              "precio": 9.05
+              "precio": "9.05"
             }
           ]
         },
@@ -531,37 +531,37 @@
             {
               "nombre": "Pescado a las Brazas del Señor",
               "descripcion": "filete de pescado a la plancha en salsa de limón, mantequilla y perejil",
-              "precio": 5.95
+              "precio": "5.95"
             },
             {
               "nombre": "Bistec encebollado de Res a la plancha",
               "descripcion": "con cebolla caramelizada",
-              "precio": 5.7
+              "precio": "5.70"
             },
             {
               "nombre": "Vaca Frita Crujiente del Altar",
               "descripcion": "carne de res deshilachada en mojo de limón, cebolla y ajos frescos",
-              "precio": 5.5
+              "precio": "5.50"
             },
             {
               "nombre": "Bistec de cerdo al grill",
               "descripcion": "bañado en mojo criollo",
-              "precio": 5.5
+              "precio": "5.50"
             },
             {
               "nombre": "Terneritas Sagradas",
               "descripcion": "tiernas fajitas de res salteadas con cebolla, pimiento y champiñones",
-              "precio": 5.3
+              "precio": "5.30"
             },
             {
               "nombre": "Fajitas de San Mateo",
               "descripcion": "pollo al ajillo salteado con champiñones",
-              "precio": 5.0
+              "precio": "5.00"
             },
             {
               "nombre": "Milanesa de pollo o cerdo",
               "descripcion": "con espaguetis",
-              "precio": 5.0
+              "precio": "5.00"
             }
           ]
         }
@@ -579,22 +579,22 @@
             {
               "nombre": "Gaspar",
               "descripcion": "1 bola de helado",
-              "precio": 0.95
+              "precio": "0.95"
             },
             {
               "nombre": "Melchor",
               "descripcion": "2 bolas de helado",
-              "precio": 1.75
+              "precio": "1.75"
             },
             {
               "nombre": "Baltasar",
               "descripcion": "sunday de 3 bolas",
-              "precio": 2.7
+              "precio": "2.70"
             },
             {
               "nombre": "Melquisedec",
               "descripcion": "suero cremoso de helado",
-              "precio": 2.05
+              "precio": "2.05"
             }
           ]
         },
@@ -604,22 +604,22 @@
             {
               "nombre": "Tres Leches",
               "descripcion": "bizcocho esponjoso bañado en leche evaporada, condensada y nata, coronado con crema batida",
-              "precio": 1.9
+              "precio": "1.90"
             },
             {
               "nombre": "Flan del Cardenal",
               "descripcion": "flan de huevo clásico con caramelo dorado",
-              "precio": 1.9
+              "precio": "1.90"
             },
             {
               "nombre": "Tiramisú",
               "descripcion": "capas de bizcocho savoiardi, mascarpone y café espresso, espolvoreado con cacao",
-              "precio": 1.9
+              "precio": "1.90"
             },
             {
               "nombre": "Brownie Caliente con Helado",
               "descripcion": "brownie de chocolate caliente con bola de helado de vainilla",
-              "precio": 2.7
+              "precio": "2.70"
             }
           ]
         },
@@ -629,22 +629,22 @@
             {
               "nombre": "Café espresso del altar",
               "descripcion": "",
-              "precio": 0.5
+              "precio": "0.50"
             },
             {
               "nombre": "Café con leche de la sacristía",
               "descripcion": "",
-              "precio": 0.9
+              "precio": "0.90"
             },
             {
               "nombre": "Capuchino de la cúpula",
               "descripcion": "",
-              "precio": 0.9
+              "precio": "0.90"
             },
             {
               "nombre": "Té · Manzanilla · Tila · Menta Poleo",
               "descripcion": "",
-              "precio": 0.5
+              "precio": "0.50"
             }
           ]
         }
@@ -662,37 +662,37 @@
             {
               "nombre": "100 Pipers",
               "descripcion": "",
-              "precio": 1.25
+              "precio": "1.25"
             },
             {
               "nombre": "Jameson",
               "descripcion": "",
-              "precio": 1.8
+              "precio": "1.80"
             },
             {
               "nombre": "Ballantines",
               "descripcion": "",
-              "precio": 1.25
+              "precio": "1.25"
             },
             {
               "nombre": "Chivas Regal 12 años",
               "descripcion": "",
-              "precio": 3.05
+              "precio": "3.05"
             },
             {
               "nombre": "Chivas Regal 15 años",
               "descripcion": "",
-              "precio": 7.35
+              "precio": "7.35"
             },
             {
               "nombre": "Chivas Regal 18 años",
               "descripcion": "",
-              "precio": 8.4
+              "precio": "8.40"
             },
             {
               "nombre": "The Glenlivet Founder's Reserve",
               "descripcion": "",
-              "precio": 2.45
+              "precio": "2.45"
             }
           ]
         },
@@ -702,37 +702,37 @@
             {
               "nombre": "Havana 3 Años",
               "descripcion": "",
-              "precio": 0.65
+              "precio": "0.65"
             },
             {
               "nombre": "Havana Especial",
               "descripcion": "",
-              "precio": 0.65
+              "precio": "0.65"
             },
             {
               "nombre": "Habana Ritual",
               "descripcion": "",
-              "precio": 0.7
+              "precio": "0.70"
             },
             {
               "nombre": "Havana Reserva",
               "descripcion": "",
-              "precio": 1.1
+              "precio": "1.10"
             },
             {
               "nombre": "Havana 7 Años",
               "descripcion": "",
-              "precio": 1.55
+              "precio": "1.55"
             },
             {
               "nombre": "Pacto Navio",
               "descripcion": "",
-              "precio": 6.65
+              "precio": "6.65"
             },
             {
               "nombre": "Selección de Maestros",
               "descripcion": "",
-              "precio": 5.8
+              "precio": "5.80"
             }
           ]
         },
@@ -742,27 +742,27 @@
             {
               "nombre": "Torres V",
               "descripcion": "",
-              "precio": 0.75
+              "precio": "0.75"
             },
             {
               "nombre": "Torres X",
               "descripcion": "",
-              "precio": 0.95
+              "precio": "0.95"
             },
             {
               "nombre": "Torres XV",
               "descripcion": "",
-              "precio": 1.15
+              "precio": "1.15"
             },
             {
               "nombre": "Torres XX",
               "descripcion": "",
-              "precio": 1.55
+              "precio": "1.55"
             },
             {
               "nombre": "Cognac Martell",
               "descripcion": "",
-              "precio": 5.5
+              "precio": "5.50"
             }
           ]
         },
@@ -772,52 +772,52 @@
             {
               "nombre": "Licor de Café",
               "descripcion": "",
-              "precio": 0.95
+              "precio": "0.95"
             },
             {
               "nombre": "Licor de Melocotón",
               "descripcion": "",
-              "precio": 0.95
+              "precio": "0.95"
             },
             {
               "nombre": "Licor de Melón",
               "descripcion": "",
-              "precio": 0.95
+              "precio": "0.95"
             },
             {
               "nombre": "Rua Vieja crema",
               "descripcion": "",
-              "precio": 0.95
+              "precio": "0.95"
             },
             {
               "nombre": "Rua Vieja chocolate",
               "descripcion": "",
-              "precio": 0.95
+              "precio": "0.95"
             },
             {
               "nombre": "Crema Catalana",
               "descripcion": "",
-              "precio": 1.05
+              "precio": "1.05"
             },
             {
               "nombre": "Crema de Whisky",
               "descripcion": "",
-              "precio": 1.05
+              "precio": "1.05"
             },
             {
               "nombre": "Amaretto",
               "descripcion": "",
-              "precio": 0.7
+              "precio": "0.70"
             },
             {
               "nombre": "Licor Limoncello",
               "descripcion": "",
-              "precio": 0.7
+              "precio": "0.70"
             },
             {
               "nombre": "Triple Sec",
               "descripcion": "",
-              "precio": 0.65
+              "precio": "0.65"
             }
           ]
         },
@@ -827,12 +827,12 @@
             {
               "nombre": "Olmeca Blanco",
               "descripcion": "",
-              "precio": 1.15
+              "precio": "1.15"
             },
             {
               "nombre": "Olmeca Reposado",
               "descripcion": "",
-              "precio": 1.6
+              "precio": "1.60"
             }
           ]
         },
@@ -842,7 +842,7 @@
             {
               "nombre": "Beefeater",
               "descripcion": "",
-              "precio": 0.85
+              "precio": "0.85"
             }
           ]
         },
@@ -852,7 +852,7 @@
             {
               "nombre": "Absolut",
               "descripcion": "",
-              "precio": 1.3
+              "precio": "1.30"
             }
           ]
         },
@@ -862,12 +862,12 @@
             {
               "nombre": "Seco",
               "descripcion": "",
-              "precio": 0.75
+              "precio": "0.75"
             },
             {
               "nombre": "Dulce",
               "descripcion": "",
-              "precio": 0.75
+              "precio": "0.75"
             }
           ]
         },
@@ -877,7 +877,7 @@
             {
               "nombre": "Sambuca San Faustino",
               "descripcion": "",
-              "precio": 0.95
+              "precio": "0.95"
             }
           ]
         }

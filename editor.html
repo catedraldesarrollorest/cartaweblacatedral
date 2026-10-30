@@ -246,7 +246,10 @@ function esc(s){
     .replace(/&/g,"&amp;").replace(/</g,"&lt;")
     .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
-function num(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+function num(n){
+  if(D && D.local && D.local.moneda === "USD") return "$" + Number(n).toFixed(2);
+  return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 var avisoT;
 function aviso(txt){
@@ -319,10 +322,16 @@ function pintar(){
            '<input type="number" id="aj-pct" value="5" step="0.5"></label>' +
          '<label><span class="rubro">Redondear a</span>' +
            '<select id="aj-red">' +
-             '<option value="1">Sin redondear</option>' +
-             '<option value="10">Decena</option>' +
-             '<option value="50" selected>50</option>' +
-             '<option value="100">100</option></select></label>' +
+             (D.local && D.local.moneda === "USD"
+               ? '<option value="0.01">Sin redondear</option>' +
+                 '<option value="0.05" selected>5 centavos</option>' +
+                 '<option value="0.25">25 centavos</option>' +
+                 '<option value="0.5">50 centavos</option>' +
+                 '<option value="1">1 dólar</option></select></label>'
+               : '<option value="1">Sin redondear</option>' +
+                 '<option value="10">Decena</option>' +
+                 '<option value="50" selected>50</option>' +
+                 '<option value="100">100</option></select></label>') +
          '<button class="pri" id="aj-ir">Aplicar</button>' +
          '<p class="nota">Sube o baja los precios en bloque. Usa un número negativo para bajar.</p>' +
        '</div>';
@@ -352,7 +361,7 @@ function pintar(){
                  '<input class="nom" value="'+esc(it.nombre)+'" data-p="'+base+'.nombre" aria-label="Nombre del producto">' +
                  '<input class="des" value="'+esc(it.descripcion)+'" data-p="'+base+'.descripcion" placeholder="Descripción (opcional)" aria-label="Descripción">' +
                '</div>' +
-               '<input class="pre" type="number" value="'+(it.precio==null?"":it.precio)+'" data-p="'+base+'.precio" placeholder="—" aria-label="Precio">' +
+               '<input class="pre" type="number" step="any" value="'+(it.precio==null?"":it.precio)+'" data-p="'+base+'.precio" placeholder="—" aria-label="Precio">' +
                '<button class="mini peligro quitar" data-del="'+si+'.'+ui+'.'+ii+'" aria-label="Quitar">✕</button>' +
              '</div>';
       });
@@ -378,7 +387,7 @@ function fijar(ruta, val){
   var p = ruta.split("."), o = D;
   for(var i=0;i<p.length-1;i++) o = o[p[i]];
   var k = p[p.length-1];
-  if(k === "precio") o[k] = (val === "" ? null : Number(val));
+  if(k === "precio") o[k] = (val === "" ? null : (D.local && D.local.moneda === "USD" ? Number(val).toFixed(2) : Number(val)));
   else o[k] = val;
 }
 
@@ -429,7 +438,7 @@ function enlazar(){
 function ajustar(){
   var sel = $("#aj-sec").value;
   var pct = parseFloat($("#aj-pct").value);
-  var red = parseInt($("#aj-red").value,10) || 1;
+  var red = parseFloat($("#aj-red").value) || 1;
   if(isNaN(pct) || pct === 0){ aviso("Escribe un porcentaje"); return; }
 
   var secs = sel === "*" ? D.secciones : [D.secciones[+sel]];
@@ -438,7 +447,8 @@ function ajustar(){
     (s.subsecciones||[]).forEach(function(u){
       (u.items||[]).forEach(function(it){
         if(it.precio == null) return;
-        it.precio = Math.round(it.precio * (1 + pct/100) / red) * red;
+        it.precio = Math.round(Math.round(it.precio * (1 + pct/100) / red) * red * 100) / 100;
+        if(D.local && D.local.moneda === "USD") it.precio = Number(it.precio).toFixed(2);
         n++;
       });
     });

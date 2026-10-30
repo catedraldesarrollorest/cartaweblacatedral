@@ -333,7 +333,7 @@ footer .orn{margin-bottom:20px}
   "description":"Bar restaurante en el Vedado, La Habana. Cocina cubana, brasas, mariscos frescos y cocteleria de fruta natural.",
   "servesCuisine":["Cubana","Mariscos","Internacional"],
   "priceRange":"$$",
-  "currenciesAccepted":"CUP",
+  "currenciesAccepted":"USD",
   "image":"https://cartaweblacatedral-kosn.vercel.app/logo.png","url":"https://cartaweblacatedral-kosn.vercel.app/",
   "address":{
     "@type":"PostalAddress",
@@ -441,7 +441,11 @@ var CACHE = "catedral.carta.v2";
 var $ = function(s){ return document.querySelector(s); };
 
 /* Precio con coma de millares: idéntico a la carta impresa */
-function precio(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+var MONEDA = "CUP";
+function precio(n){
+  if(MONEDA === "USD") return "$" + Number(n).toFixed(2);
+  return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 function esc(s){
   return String(s == null ? "" : s)
@@ -477,6 +481,7 @@ function pintarEstado(local){
 var SECS = [];
 
 function pintarMenu(data){
+  MONEDA = (data.local && data.local.moneda) || "CUP";
   SECS = data.secciones || [];
   var idx = "", html = "";
 
@@ -574,7 +579,8 @@ function pintarLocal(local, sello){
   $("#descripcion").textContent = local.descripcion || "";
   $("#pie-dir").textContent = local.direccion || "";
   if(sello) $("#sello").textContent =
-    "Precios en " + (local.moneda || "CUP") + " · actualizada el " + sello;
+    "Precios en " + (local.moneda || "CUP") + " · actualizada el " + sello +
+    (local.nota_precios ? ". " + local.nota_precios : "");
 
   pintarEstado(local);
 
